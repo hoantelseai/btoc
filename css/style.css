@@ -109,7 +109,7 @@ h6 {
   list-style: none;
   display: flex;
   gap: 50px;
-  margin-bottom:0px;
+  margin-bottom: 0px;
 }
 
 .nav-menu li {
@@ -126,17 +126,17 @@ h6 {
 } */
 
 .cart-icon {
-    color: #aa2537; 
-    font-size: 30px;
+  color: #aa2537;
+  font-size: 30px;
 }
 
 .link-icon {
-    font-size: 15px;
+  font-size: 15px;
 }
 
 .mail-icon {
-    margin-left: 50px;
-    font-size: 30px;
+  margin-left: 50px;
+  font-size: 30px;
 }
 .nav-menu li a {
   text-decoration: none;
@@ -353,8 +353,8 @@ h6 {
   opacity: 0; /* Bắt đầu mờ */
   /* animation: fadeIn 3s ease-out forwards;  */
   filter: blur(5px); /* Bắt đầu với độ blur */
-    animation: fadeInClear 1s ease-out forwards; /* Hiệu ứng blur rồi rõ */
-    animation-delay: 1.5s;
+  animation: fadeInClear 1s ease-out forwards; /* Hiệu ứng blur rồi rõ */
+  animation-delay: 1.5s;
 }
 
 .text-left {
@@ -371,7 +371,7 @@ h6 {
   font-size: 36px;
   padding-bottom: 30px;
   line-height: 54px;
-
+  letter-spacing: 0.12rem;
 }
 
 /* RIGHT TITLE */
@@ -381,18 +381,18 @@ h6 {
   max-width: 500px; /* Giới hạn chiều rộng để không chồng lên hoa */
   font-size: 16px;
   line-height: 34px;
-
+  letter-spacing: 0.12rem;
 }
 
 /* Keyframes cho hiệu ứng fade-in */
 @keyframes fadeInClear {
   0% {
-      opacity: 0; /* Bắt đầu mờ */
-      filter: blur(5px); /* Bắt đầu với độ blur 5px */
+    opacity: 0; /* Bắt đầu mờ */
+    filter: blur(5px); /* Bắt đầu với độ blur 5px */
   }
   100% {
-      opacity: 1; /* Kết thúc rõ */
-      filter: blur(0); /* Kết thúc không blur */
+    opacity: 1; /* Kết thúc rõ */
+    filter: blur(0); /* Kết thúc không blur */
   }
 }
 
@@ -466,793 +466,914 @@ h6 {
 /* CARD SLIDER CSS */
 
 .card-slider-container {
-    position: absolute;
-    bottom: 70px;
-    left: 144px;
-    width: 462px; /* Tăng chiều rộng để chứa nội dung */
-    height: 148px;
-    z-index: 5;
+  position: absolute;
+  bottom: 70px;
+  left: 144px;
+  width: 462px; /* Tăng chiều rộng để chứa nội dung */
+  height: 148px;
+  z-index: 5;
+}
+
+.card-slider {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* opacity: 0; */
+  /* transition: opacity 0.5s ease; */
+  transform: translateX(100%); /* Bắt đầu từ bên phải */
+  transition: transform 0.5s ease; /* Hiệu ứng trượt mượt mà */
+  background-color: #fff; /* Nền trắng cho khung chữ nhật */
+}
+
+.slide.active {
+  /* opacity: 1; */
+  transform: translateX(0); /* Khi active, slide vào vị trí chính giữa */
+}
+
+.slide-content {
+  display: flex;
+  height: 100%;
+}
+
+.text-section {
+  width: 70%;
+  /* padding: 30px; */
+  padding: 30px 30px 10px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.text-section p {
+  font-size: 16px;
+  line-height: 26px;
+  margin: 0 0 5px 0;
+  color: #333;
+}
+
+.play-icon {
+  font-size: 30px;
+  position: absolute;
+  /* top: 63%;
+    right: 45%; */
+  top: 46%; /* Căn giữa dọc */
+  transform: translateY(-50%); /* Căn giữa chính xác */
+  right: 10px; /* Sát mép phải bên trong .view-more */
+}
+
+.view-more {
+  background-color: #aa2537;
+  color: #fff;
+  border: none;
+  /* padding: 5px 10px; */
+  font-size: 16px;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  /* width: fit-content; */
+  border-radius: 40px;
+  display: flex;
+  width: 230px;
+  height: 40px;
+  position: relative;
+}
+
+.view-more:hover {
+  /* background-color: #555; */
+  opacity: 0.7;
+}
+
+.image-section {
+  width: 30%;
+  height: 100%;
+}
+
+.image-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dots-container {
+  position: absolute;
+  top: -30px;
+  left: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: #fff0b2;
+}
+
+.dot:hover {
+  background-color: #fff0b2;
+}
+
+/* CSS FOR SMALL DEVICE */
+
+@media only screen and (max-width: 1366px) {
+  .top-section {
+    height: 500px;
   }
-  
-  .card-slider {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  .header {
+    padding: 20px 30px;
   }
-  
-  .slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    /* opacity: 0; */
-    /* transition: opacity 0.5s ease; */
-    transform: translateX(100%); /* Bắt đầu từ bên phải */
-    transition: transform 0.5s ease; /* Hiệu ứng trượt mượt mà */
-    background-color: #fff; /* Nền trắng cho khung chữ nhật */
+
+  .logo {
+    height: 50px;
   }
-  
-  .slide.active {
-    /* opacity: 1; */
-    transform: translateX(0); /* Khi active, slide vào vị trí chính giữa */
+
+  .nav-menu {
+    gap: 45px;
   }
-  
-  .slide-content {
-    display: flex;
-    height: 100%;
+
+  .nav-menu li {
+    font-size: 16px;
   }
-  
+
+  .cart-icon {
+    font-size: 30px;
+  }
+
+  .link-icon {
+    font-size: 15px;
+  }
+
+  .mail-icon {
+    margin-left: 45px;
+    font-size: 30px;
+  }
+
+  .hamburger {
+    margin-left: 45px;
+  }
+
+  .text-left {
+    left: 40px;
+    font-size: 36px;
+    line-height: 54px;
+    max-width: 500px;
+    top: 40%;
+  }
+
+  .text-right {
+    right: 40px;
+    font-size: 16px;
+    line-height: 32px;
+    max-width: 500px;
+  }
+
+  .flower-container {
+    width: 530px;
+    height: 88vh;
+  }
+
+  .card-slider-container {
+    left: 40px;
+    bottom: 40px;
+    width: 460px;
+    height: 130px;
+  }
   .text-section {
-    width: 70%;
-    /* padding: 30px; */
-    padding: 30px 30px 10px 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    padding: 20px 20px 10px 20px;
   }
-  
   .text-section p {
     font-size: 16px;
     line-height: 26px;
-    margin: 0 0 5px 0;
-    color: #333;
+  }
+
+  .view-more {
+    width: 230px;
+    height: 40px;
+    font-size: 16px;
   }
 
   .play-icon {
     font-size: 30px;
-    position: absolute;
-    /* top: 63%;
-    right: 45%; */
-    top: 46%; /* Căn giữa dọc */
-    transform: translateY(-50%); /* Căn giữa chính xác */
-    right: 10px; /* Sát mép phải bên trong .view-more */
   }
-  
-  .view-more {
-    background-color: #aa2537;
-    color: #fff;
-    border: none;
-    /* padding: 5px 10px; */
-    font-size: 16px;
-    cursor: pointer;
-    text-transform: uppercase;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s ease;
-    /* width: fit-content; */
-    border-radius: 40px;
-    display: flex;
-    width: 230px;
-    height: 40px;
-    position: relative; 
-  }
-  
-  .view-more:hover {
-    /* background-color: #555; */
-    opacity: 0.7;
-  }
-  
-  .image-section {
-    width: 30%;
-    height: 100%;
-  }
-  
-  .image-section img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .dots-container {
-    position: absolute;
-    top: -30px;
-    left: 0;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .dot {
-    width: 10px;
-    height: 10px;
-    background-color: #ffffff;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .dot.active {
-    background-color: #fff0b2;
-  }
-  
-  .dot:hover {
-    background-color: #fff0b2;
-  }
-
-/* CSS FOR SMALL DEVICE */
-
-  @media only screen and (max-width: 1366px) {
-    .top-section {
-        height: 500px;
-    }
-
-    .header {
-        padding: 20px 30px;
-    }
-
-    .logo {
-        height: 50px;
-    }
-
-    .nav-menu {
-        gap: 45px;
-    }
-
-    .nav-menu li {
-        font-size: 16px;
-    }
-
-    .cart-icon {
-        font-size: 30px;
-    }
-
-    .link-icon {
-        font-size: 15px;
-    }
-
-    .mail-icon {
-        margin-left: 45px;
-        font-size: 30px;
-    }
-
-    .hamburger {
-        margin-left: 45px;
-    }
-
-    .text-left {
-        left: 40px;
-        font-size: 36px;
-        line-height: 54px;
-        max-width: 500px;
-        top: 40%;
-    }
-
-    .text-right {
-        right: 40px;
-        font-size: 16px;
-        line-height: 32px;
-        max-width: 500px;
-    }
-
-    .flower-container {
-        width: 530px;
-        height: 88vh;
-    }
-
-    .card-slider-container {
-        left: 40px;
-        bottom: 40px;
-        width: 460px;
-        height: 130px;
-    }
-    .text-section {
-        padding: 20px 20px 10px 20px;
-    }
-    .text-section p {
-        font-size: 16px;
-        line-height: 26px;
-    }
-
-    .view-more {
-        width: 230px;
-        height: 40px;
-        font-size: 16px;
-    }
-
-    .play-icon {
-        font-size: 30px;
-    }
 }
 
 @media only screen and (min-width: 821px) and (max-width: 912px) {
+  .top-section {
+    height: 500px;
+  }
+
+  .header {
+    padding: 15px 20px;
+  }
+
+  .logo {
+    height: 45px;
+  }
+
+  .nav-menu {
+    gap: 30px;
+  }
+
+  .nav-menu li {
+    font-size: 14px;
+  }
+
+  .cart-icon {
+    font-size: 26px;
+  }
+
+  .link-icon {
+    font-size: 13px;
+  }
+
+  .mail-icon {
+    margin-left: 30px;
+    font-size: 26px;
+  }
+
+  .hamburger {
+    margin-left: 30px;
+    width: 28px;
+    height: 22px;
+  }
+
+  .hamburger span {
+    width: 28px;
+    height: 3px;
+  }
+
+  .hamburger-menu__content {
+    max-width: 800px;
+    margin: 60px auto 0;
+  }
+
+  .menu-title h3 {
+    font-size: 16px;
+  }
+
+  .hamburger-menu__column ul li a {
+    font-size: 13px;
+  }
+
+  .text-left {
+    left: 20px;
+    font-size: 25px;
+    line-height: 48px;
+    max-width: 400px;
+  }
+
+  .text-right {
+    right: 20px;
+    font-size: 12px;
+    line-height: 28px;
+    max-width: 350px;
+  }
+
+  .flower-container {
+    width: 450px;
+    height: 45vh;
+  }
+
+  .card-slider-container {
+    left: 20px;
+    bottom: 50px;
+    width: 400px;
+    height: 130px;
+  }
+
+  .text-section {
+    padding: 25px 25px 10px 25px;
+  }
+
+  .text-section p {
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  .view-more {
+    width: 200px;
+    height: 38px;
+    font-size: 15px;
+  }
+
+  .play-icon {
+    font-size: 26px;
+    right: 10px;
+  }
+
+  .image-section {
+    width: 35%;
+  }
+
+  .dots-container {
+    top: -25px;
+    gap: 15px;
+  }
+
+  .dot {
+    width: 9px;
+    height: 9px;
+  }
+}
+/* STYLES FOR DEVICES WITH WIDTH BETWEEN 913px AND 1024px IN PORTRAIT (fix for 1024px x 1366px screens) */
+@media only screen and (min-width: 913px) and (max-width: 1024px) and (orientation: portrait) {
     .top-section {
-      height: 500px;
+      height: 600px;
     }
   
     .header {
-      padding: 15px 20px;
+      padding: 18px 30px;
     }
   
     .logo {
-      height: 45px;
+      height: 50px;
     }
   
     .nav-menu {
-      gap: 30px;
+      gap: 40px;
     }
   
     .nav-menu li {
-      font-size: 14px;
+      font-size: 16px;
     }
   
     .cart-icon {
-      font-size: 26px;
+      font-size: 30px;
     }
   
     .link-icon {
-      font-size: 13px;
+      font-size: 15px;
     }
   
     .mail-icon {
-      margin-left: 30px;
-      font-size: 26px;
+      margin-left: 40px;
+      font-size: 30px;
     }
   
     .hamburger {
-      margin-left: 30px;
-      width: 28px;
-      height: 22px;
+      margin-left: 40px;
+      width: 32px;
+      height: 26px;
     }
   
     .hamburger span {
-      width: 28px;
+      width: 32px;
       height: 3px;
     }
   
     .hamburger-menu__content {
-      max-width: 800px;
-      margin: 60px auto 0;
+      max-width: 900px;
+      margin: 80px auto 0;
     }
   
     .menu-title h3 {
-      font-size: 16px;
+      font-size: 18px;
     }
   
     .hamburger-menu__column ul li a {
-      font-size: 13px;
+      font-size: 15px;
     }
   
     .text-left {
       left: 20px;
-      font-size: 25px;
-      line-height: 48px;
-      max-width: 400px;
+      font-size: 30px;
+      line-height: 54px;
+      max-width: 450px;
+      top: 40%;
     }
   
     .text-right {
       right: 20px;
-      font-size: 12px;
-      line-height: 28px;
-      max-width: 350px;
-    }
-  
-    .flower-container {
-      width: 450px;
-      height: 45vh;
-    }
-  
-    .card-slider-container {
-      left: 20px;
-      bottom: 50px;
-      width: 400px;
-      height: 130px;
-    }
-  
-    .text-section {
-      padding: 25px 25px 10px 25px;
-    }
-  
-    .text-section p {
-      font-size: 15px;
-      line-height: 24px;
-    }
-  
-    .view-more {
-      width: 200px;
-      height: 38px;
-      font-size: 15px;
-    }
-  
-    .play-icon {
-      font-size: 26px;
-      right: 10px;
-    }
-  
-    .image-section {
-      width: 35%;
-    }
-  
-    .dots-container {
-      top: -25px;
-      gap: 15px;
-    }
-  
-    .dot {
-      width: 9px;
-      height: 9px;
-    }
-  }
-
-  /* STYLES FOR DEVICES WITH WIDTH <= 820px (including phones and iPads in portrait/landscape when width <= 820px) */
-@media only screen and (max-width: 820px) {
-    .top-section {
-      height: 480px;
-    }
-  
-    .nav-menu {
-      display: none;
-    }
-  
-    .hamburger {
-      margin-left: 0;
-    }
-  
-    .header {
-      padding: 15px 20px;
-    }
-  
-    .logo {
-      height: 40px;
-    }
-  
-    .hamburger-menu__content {
-      display: block;
-      flex-direction: column;
-      align-items: center;
-      margin: 0px auto 0;
-    }
-  
-    .hamburger-menu__column {
-      display: none;
-    }
-  
-    .mobile-menu-list {
-      list-style: none;
-      padding: 0;
-      display: block;
-    }
-  
-    .mobile-menu-list li {
-      margin-bottom: 20px;
-    }
-  
-    .cart-icon {
-      margin-right: 10px;
-      font-size: 24px;
-    }
-  
-    .link-icon {
-      margin-left: 10px;
-      font-size: 24px;
-    }
-  
-    .mail-icon {
-      margin-left: 20px;
-      font-size: 24px;
-    }
-  
-    .mobile-menu-list li a {
-      text-decoration: none;
-      color: #333;
-      font-size: 5vw;
-      font-weight: 500;
-      display: inline-block;
-      position: relative;
-    }
-  
-    .mobile-menu-list li a:hover {
-      color: #333;
-    }
-  
-    .mobile-menu-list li.arrow::after {
-      content: " >>>";
-      color: #333;
-      font-size: 7vw;
-      position: absolute;
-      right: 20px;
-      transform: translateY(-16%);
-    }
-  
-    .text-right {
-      display: none;
-    }
-  
-    .text-left {
-      left: 20px;
-      font-size: 24px;
-      line-height: 36px;
-      max-width: 300px;
-    }
-  
-    .flower-container {
-      left: auto;
-      right: 0;
-      transform: translateY(-50%);
-      width: 300px;
-      height: 70vh;
-    }
-  
-    .card-slider-container {
-      left: 50%;
-      transform: translateX(-50%);
-      bottom: 20px;
-      width: 90%;
+      font-size: 16px;
+      line-height: 32px;
       max-width: 400px;
-      height: 120px;
-    }
-  
-    .card-slider {
-      border-radius: 8px;
-    }
-  
-    .text-section {
-      padding: 20px;
-    }
-  
-    .text-section p {
-      font-size: 14px;
-      line-height: 22px;
-    }
-  
-    .view-more {
-      width: 180px;
-      height: 36px;
-      font-size: 14px;
-    }
-  
-    .play-icon {
-      font-size: 24px;
-      right: 10px;
-    }
-  
-    .image-section {
-      width: 40%;
-    }
-  
-    .dots-container {
-      top: -25px;
-      gap: 15px;
-    }
-  
-    .dot {
-      width: 8px;
-      height: 8px;
-    }
-  }
-  
-  /* STYLES FOR SMALL PHONES (320px - 480px) */
-  @media only screen and (max-width: 480px) {
-    .top-section {
-      height: 400px;
-    }
-  
-    .header {
-      padding: 10px 15px;
-    }
-  
-    .logo {
-      height: 35px;
-    }
-  
-    .hamburger {
-      width: 25px;
-      height: 20px;
-    }
-  
-    .hamburger span {
-      width: 25px;
-      height: 2px;
-    }
-  
-    .mobile-menu-list li a {
-      font-size: 6vw;
-    }
-  
-    .mobile-menu-list li.arrow::after {
-      font-size: 8vw;
-      right: 15px;
-    }
-  
-    .cart-icon {
-      font-size: 20px;
-    }
-  
-    .link-icon {
-      font-size: 20px;
-    }
-  
-    .mail-icon {
-      margin-left: 15px;
-      font-size: 20px;
-    }
-  
-    .text-left {
-      left: 15px;
-      font-size: 20px;
-      line-height: 30px;
-      max-width: 250px;
     }
   
     .flower-container {
-      width: 250px;
+      width: 500px;
       height: 60vh;
     }
   
     .card-slider-container {
-      max-width: 333px;
-      height: 100px;
-    }
-  
-    .card-slider {
-      border-radius: 6px;
-    }
-  
-    .text-section {
-      padding: 15px;
-    }
-  
-    .text-section p {
-      font-size: 12px;
-      line-height: 18px;
-    }
-  
-    .view-more {
-      width: 150px;
-      height: 32px;
-      font-size: 12px;
-    }
-  
-    .play-icon {
-      font-size: 20px;
-      right: 8px;
-    }
-  
-    .dots-container {
-      top: -20px;
-      gap: 10px;
-    }
-  
-    .dot {
-      width: 6px;
-      height: 6px;
-    }
-  }
-  
-  /* STYLES FOR MEDIUM PHONES (481px - 820px) */
-  @media only screen and (min-width: 481px) and (max-width: 820px) {
-    .top-section {
-      height: 300px;
-    }
-  
-    .header {
-      padding: 12px 18px;
-    }
-  
-    .logo {
-      height: 38px;
-    }
-  
-    .mobile-menu-list li a {
-      font-size: 5vw;
-    }
-  
-    .mobile-menu-list li.arrow::after {
-      font-size: 7vw;
-    }
-  
-    .cart-icon {
-      font-size: 22px;
-    }
-  
-    .link-icon {
-      font-size: 22px;
-    }
-  
-    .mail-icon {
-      margin-left: 18px;
-      font-size: 22px;
-    }
-  
-    .text-left {
-      left: 30px;
-      font-size: 22px;
-      line-height: 33px;
-      max-width: 280px;
-    }
-  
-    .flower-container {
-      width: 280px;
-      height: 80vh;
-    }
-  
-    .card-slider-container {
-      max-width: 600px;
-      height: 110px;
-    }
-  
-    .card-slider {
-      border-radius: 7px;
-    }
-  
-    .text-section {
-      padding: 18px;
-    }
-  
-    .text-section p {
-      font-size: 13px;
-      line-height: 20px;
-    }
-  
-    .view-more {
-      width: 160px;
-      height: 34px;
-      font-size: 13px;
-    }
-  
-    .play-icon {
-      font-size: 22px;
-      right: 9px;
-    }
-  
-    .dots-container {
-      top: -22px;
-      gap: 12px;
-    }
-  
-    .dot {
-      width: 7px;
-      height: 7px;
-    }
-  }
-  
-  /* STYLES FOR IPADS IN PORTRAIT (width <= 820px) */
-  @media only screen and (min-width: 768px) and (max-width: 820px) and (orientation: portrait) {
-    .top-section {
-      height: 500px;
-    }
-  
-    .text-left {
-      left: 80px;
-      font-size: 28px;
-      line-height: 42px;
-      max-width: 350px;
-    }
-  
-    .flower-container {
-      width: 350px;
-      height: 75vh;
-    }
-  
-    .card-slider-container {
-      max-width: 700x;
-      height: 120px;
-    }
-  
-    .text-section p {
-      font-size: 15px;
-      line-height: 24px;
-    }
-  
-    .view-more {
-      width: 180px;
-      height: 36px;
-      font-size: 14px;
-    }
-  
-    .play-icon {
-      font-size: 24px;
-    }
-  }
-  
-  /* STYLES FOR DEVICES WITH WIDTH > 820px (including phones and iPads in landscape) */
-  /* Since the default styles (code chính) are already applied for widths > 820px, no additional media query is needed here. The default styles will automatically apply. */
-  
-  /* Optional: Fine-tuning for iPads in landscape with width > 820px */
-  @media only screen and (min-width: 821px) and (max-width: 1024px) and (orientation: landscape) {
-    .top-section {
-      height: 350px;
-    }
-  
-    .header {
-      padding: 18px 25px;
-    }
-  
-    .logo {
-      height: 45px;
-    }
-  
-    .nav-menu {
-      gap: 30px;
-    }
-  
-    .nav-menu li {
-      font-size: 15px;
-    }
-  
-    .cart-icon {
-      font-size: 28px;
-    }
-  
-    .link-icon {
-      font-size: 14px;
-    }
-  
-    .mail-icon {
-      margin-left: 40px;
-      font-size: 28px;
-    }
-  
-    .hamburger {
-      margin-left: 40px;
-    }
-  
-    .text-left {
       left: 20px;
-      font-size: 20px;
-      line-height: 30px;
-      max-width: 450px;
+      bottom: 70px;
+      width: 450px;
+      height: 148px;
     }
   
-    .text-right {
-      right: 20px;
-      font-size: 12px;
-      line-height: 30px;
-      max-width: 450px;
-      top: 60%;
+    .text-section {
+      padding: 30px 30px 10px 30px;
     }
   
-    .flower-container {
-      width: 700px;
-      height: 50vw;
+    .text-section p {
+      font-size: 16px;
+      line-height: 26px;
     }
   
-    .card-slider-container {
-      /* left: 80px;
+    .view-more {
+      width: 230px;
+      height: 40px;
+      font-size: 16px;
+    }
+  
+    .play-icon {
+      font-size: 30px;
+      right: 10px;
+    }
+  
+    .image-section {
+      width: 30%;
+    }
+  
+    .dots-container {
+      top: -30px;
+      gap: 20px;
+    }
+  
+    .dot {
+      width: 10px;
+      height: 10px;
+    }
+  }
+  
+/* STYLES FOR DEVICES WITH WIDTH <= 820px (including phones and iPads in portrait/landscape when width <= 820px) */
+@media only screen and (max-width: 820px) {
+  .top-section {
+    height: 480px;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+  .hamburger {
+    margin-left: 0;
+  }
+
+  .header {
+    padding: 15px 20px;
+  }
+
+  .logo {
+    height: 40px;
+  }
+
+  .hamburger-menu__content {
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px auto 0;
+  }
+
+  .hamburger-menu__column {
+    display: none;
+  }
+
+  .mobile-menu-list {
+    list-style: none;
+    padding: 0;
+    display: block;
+  }
+
+  .mobile-menu-list li {
+    margin-bottom: 20px;
+  }
+
+  .cart-icon {
+    margin-right: 10px;
+    font-size: 24px;
+  }
+
+  .link-icon {
+    margin-left: 10px;
+    font-size: 24px;
+  }
+
+  .mail-icon {
+    margin-left: 20px;
+    font-size: 24px;
+  }
+
+  .mobile-menu-list li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 5vw;
+    font-weight: 500;
+    display: inline-block;
+    position: relative;
+  }
+
+  .mobile-menu-list li a:hover {
+    color: #333;
+  }
+
+  .mobile-menu-list li.arrow::after {
+    content: " >>>";
+    color: #333;
+    font-size: 7vw;
+    position: absolute;
+    right: 20px;
+    transform: translateY(-16%);
+  }
+
+  .text-right {
+    display: none;
+  }
+
+  .text-left {
+    left: 20px;
+    font-size: 24px;
+    line-height: 36px;
+    max-width: 300px;
+  }
+
+  .flower-container {
+    left: auto;
+    right: 0;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 70vh;
+  }
+
+  .card-slider-container {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+    width: 90%;
+    max-width: 400px;
+    height: 120px;
+  }
+
+  .card-slider {
+    border-radius: 8px;
+  }
+
+  .text-section {
+    padding: 20px;
+  }
+
+  .text-section p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .view-more {
+    width: 180px;
+    height: 36px;
+    font-size: 14px;
+  }
+
+  .play-icon {
+    font-size: 24px;
+    right: 10px;
+  }
+
+  .image-section {
+    width: 40%;
+  }
+
+  .dots-container {
+    top: -25px;
+    gap: 15px;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/* STYLES FOR SMALL PHONES (320px - 480px) */
+@media only screen and (max-width: 480px) {
+  .top-section {
+    height: 400px;
+  }
+
+  .header {
+    padding: 10px 15px;
+  }
+
+  .logo {
+    height: 35px;
+  }
+
+  .hamburger {
+    width: 25px;
+    height: 20px;
+  }
+
+  .hamburger span {
+    width: 25px;
+    height: 2px;
+  }
+
+  .mobile-menu-list li a {
+    font-size: 6vw;
+  }
+
+  .mobile-menu-list li.arrow::after {
+    font-size: 8vw;
+    right: 15px;
+  }
+
+  .cart-icon {
+    font-size: 20px;
+  }
+
+  .link-icon {
+    font-size: 20px;
+  }
+
+  .mail-icon {
+    margin-left: 15px;
+    font-size: 20px;
+  }
+
+  .text-left {
+    left: 15px;
+    font-size: 20px;
+    line-height: 30px;
+    max-width: 250px;
+  }
+
+  .flower-container {
+    width: 250px;
+    height: 60vh;
+  }
+
+  .card-slider-container {
+    max-width: 333px;
+    height: 100px;
+  }
+
+  .card-slider {
+    border-radius: 6px;
+  }
+
+  .text-section {
+    padding: 15px;
+  }
+
+  .text-section p {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .view-more {
+    width: 150px;
+    height: 32px;
+    font-size: 12px;
+  }
+
+  .play-icon {
+    font-size: 20px;
+    right: 8px;
+  }
+
+  .dots-container {
+    top: -20px;
+    gap: 10px;
+  }
+
+  .dot {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+/* STYLES FOR MEDIUM PHONES (481px - 820px) */
+@media only screen and (min-width: 481px) and (max-width: 820px) {
+  .top-section {
+    height: 300px;
+  }
+
+  .header {
+    padding: 12px 18px;
+  }
+
+  .logo {
+    height: 38px;
+  }
+
+  .mobile-menu-list li a {
+    font-size: 5vw;
+  }
+
+  .mobile-menu-list li.arrow::after {
+    font-size: 7vw;
+  }
+
+  .cart-icon {
+    font-size: 22px;
+  }
+
+  .link-icon {
+    font-size: 22px;
+  }
+
+  .mail-icon {
+    margin-left: 18px;
+    font-size: 22px;
+  }
+
+  .text-left {
+    left: 30px;
+    font-size: 22px;
+    line-height: 33px;
+    max-width: 280px;
+  }
+
+  .flower-container {
+    width: 280px;
+    height: 80vh;
+  }
+
+  .card-slider-container {
+    max-width: 600px;
+    height: 110px;
+  }
+
+  .card-slider {
+    border-radius: 7px;
+  }
+
+  .text-section {
+    padding: 18px;
+  }
+
+  .text-section p {
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  .view-more {
+    width: 160px;
+    height: 34px;
+    font-size: 13px;
+  }
+
+  .play-icon {
+    font-size: 22px;
+    right: 9px;
+  }
+
+  .dots-container {
+    top: -22px;
+    gap: 12px;
+  }
+
+  .dot {
+    width: 7px;
+    height: 7px;
+  }
+}
+
+/* STYLES FOR IPADS IN PORTRAIT (width <= 820px) */
+@media only screen and (min-width: 768px) and (max-width: 820px) and (orientation: portrait) {
+  .top-section {
+    height: 500px;
+  }
+
+  .text-left {
+    left: 80px;
+    font-size: 28px;
+    line-height: 42px;
+    max-width: 370px;
+  }
+
+  .flower-container {
+    width: 350px;
+    height: 75vh;
+  }
+
+  .card-slider-container {
+    max-width: 700x;
+    height: 120px;
+  }
+
+  .text-section p {
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  .view-more {
+    width: 180px;
+    height: 36px;
+    font-size: 14px;
+  }
+
+  .play-icon {
+    font-size: 24px;
+  }
+}
+
+/* STYLES FOR DEVICES WITH WIDTH > 820px (including phones and iPads in landscape) */
+/* Since the default styles (code chính) are already applied for widths > 820px, no additional media query is needed here. The default styles will automatically apply. */
+
+/* Optional: Fine-tuning for iPads in landscape with width > 820px */
+@media only screen and (min-width: 821px) and (max-width: 1024px) and (orientation: landscape) {
+  .top-section {
+    height: 350px;
+  }
+
+  .header {
+    padding: 18px 25px;
+  }
+
+  .logo {
+    height: 45px;
+  }
+
+  .nav-menu {
+    gap: 30px;
+  }
+
+  .nav-menu li {
+    font-size: 15px;
+  }
+
+  .cart-icon {
+    font-size: 28px;
+  }
+
+  .link-icon {
+    font-size: 14px;
+  }
+
+  .mail-icon {
+    margin-left: 40px;
+    font-size: 28px;
+  }
+
+  .hamburger {
+    margin-left: 40px;
+  }
+
+  .text-left {
+    left: 20px;
+    font-size: 20px;
+    line-height: 30px;
+    max-width: 450px;
+  }
+
+  .text-right {
+    right: 20px;
+    font-size: 12px;
+    line-height: 30px;
+    max-width: 450px;
+    top: 60%;
+  }
+
+  .flower-container {
+    width: 700px;
+    height: 50vw;
+  }
+
+  .card-slider-container {
+    /* left: 80px;
       bottom: 50px;
       width: 420px;
       height: 140px; */
 
-      left: 20px;
-      bottom: 20px;
-      width: 368px;
-      height: 130px;
-    }
-  
-    .text-section p {
-      font-size: 15px;
-      line-height: 24px;
-    }
-  
-    .view-more {
-      width: 220px;
-      height: 38px;
-      font-size: 15px;
-    }
-  
-    .play-icon {
-      font-size: 19px;
-    }
+    left: 20px;
+    bottom: 20px;
+    width: 368px;
+    height: 130px;
+  }
+
+  .text-section p {
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  .view-more {
+    width: 220px;
+    height: 38px;
+    font-size: 15px;
+  }
+
+  .play-icon {
+    font-size: 19px;
+  }
 }
+
 
