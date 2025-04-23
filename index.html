@@ -45,7 +45,7 @@
     <section class="top-section" id="header">
         <header class="header">
             <div class="logo">
-                <img src="./images/Logo.jpg" alt="Northern Europe Logo">
+                <img src="./images/Logo.png" alt="Northern Europe Logo">
             </div>
             <!-- Menu chính -->
             <nav class="main-menu">
@@ -73,16 +73,17 @@
                 <!-- Cột 1: オンラインストア -->
                 <div class="hamburger-menu__column">
                     <a href="#" class="menu-title">
-                        <h3>オンラインストア</h3>
+                        <i class="bi bi-cart-fill cart-icon"></i>
+                        <h1>オンラインストア</h1><i class="bi bi-box-arrow-up-right link-icon"></i>
                     </a>
-                    <ul>
+                    <!-- <ul>
                         <li><a href="#">商品一覧</a></li>
                         <li><a href="#">カート</a></li>
                         <li><a href="#">チェックアウト</a></li>
-                    </ul>
+                    </ul> -->
                 </div>
                 <!-- Cột 2: 北欧の花たちとは -->
-                <div class="hamburger-menu__column">
+                <!-- <div class="hamburger-menu__column">
                     <a href="#" class="menu-title">
                         <h3>北欧の花たちとは</h3>
                     </a>
@@ -91,9 +92,31 @@
                         <li><a href="#">ミッション</a></li>
                         <li><a href="#">ビジョン</a></li>
                     </ul>
+                </div> -->
+
+                <!-- Cột 2: 花とサービス và 北欧の花たちとは -->
+                <div class="hamburger-menu__column">
+                    <!-- Phần 花とサービス -->
+                    <a href="#" class="menu-title">
+                        <h1>花とサービス</h1>
+                    </a>
+                    <div class="menu-section">
+                        <p>北欧の花々を集めたブーケ</p>
+                        <p>北欧の花々のギフト</p>
+                        <p>北欧の花々と育む生活雑貨</p>
+                    </div>
+                    <!-- Phần 北欧の花たちとは -->
+                    <a href="#" class="menu-title">
+                        <h1>北欧の花たちとは</h1>
+                    </a>
+                    <div class="menu-section">
+                        <p>エーデルワイス (Edelweiss)</p>
+                        <p>バイオレット (Viola)</p>
+                        <p>育て方ガイド</p>
+                    </div>
                 </div>
                 <!-- Cột 3: 花束とサービス -->
-                <div class="hamburger-menu__column">
+                <!-- <div class="hamburger-menu__column">
                     <a href="#" class="menu-title">
                         <h3>花束とサービス</h3>
                     </a>
@@ -102,9 +125,21 @@
                         <li><a href="#">配送サービス</a></li>
                         <li><a href="#">ギフトオプション</a></li>
                     </ul>
+                </div> -->
+
+                <!-- Cột 3: お取り扱い商品のご案内 -->
+                <div class="hamburger-menu__column">
+                    <a href="#" class="menu-title">
+                        <h1>お取り扱い商品のご案内</h1>
+                    </a>
+                    <div class="menu-section">
+                        <p>ブログ</p>
+                        <p>コラム イベント</p>
+                        <p>ニュース メールマガジン <span>【購読】</span></p>
+                    </div>
                 </div>
                 <!-- Cột 4: 店舗一覧 -->
-                <div class="hamburger-menu__column">
+                <!-- <div class="hamburger-menu__column">
                     <a href="#" class="menu-title">
                         <h3>店舗一覧</h3>
                     </a>
@@ -113,11 +148,40 @@
                         <li><a href="#">大阪店</a></li>
                         <li><a href="#">福岡店</a></li>
                     </ul>
+                </div> -->
+                <!-- Cột 4: 店舗一覧(アクセス) -->
+                <div class="hamburger-menu__column">
+                    <a href="#" class="menu-title">
+                        <h1>店舗一覧(アクセス)</h1>
+                    </a>
+                    <div class="menu-section">
+                        <p>メールマガジン <span>【購読】</span></p>
+                        <p>会社概要</p>
+                        <p>採用情報</p>
+                        <p>サイトマップ</p>
+                        <p>個人情報保護</p>
+                        <p>問い合わせ</p>
+                    </div>
+                </div>
+                <!-- Cột 5: Social Media Icons -->
+                <div class="hamburger-menu__column">
+                    <!-- <a href="#" class="menu-title">
+                        <h1>ソーシャルメディア</h1>
+                    </a> -->
+                    <div class="social-icons">
+                        <a href="#" class="social-button"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-button"><i class="bi bi-threads"></i></a>
+                        <a href="#" class="social-button"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="social-button"><i class="bi bi-youtube"></i></a>
+                        <a href="#" class="social-button"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-button"><i class="bi bi-line"></i></a>
+                        <a href="#" class="social-button"><i class="bi bi-tiktok"></i></a>
+                    </div>
                 </div>
                 <!-- Nội dung trên điện thoại -->
                 <ul class="mobile-menu-list">
                     <li><i class="bi bi-cart-fill cart-icon"></i><a href="#">オンラインストア</a><i
-                        class="bi bi-box-arrow-up-right link-icon"></i></li>
+                            class="bi bi-box-arrow-up-right link-icon"></i></li>
                     <li class="arrow"><a href="#">花束とサービス</a></li>
                     <li class="arrow"><a href="#">北欧の花たちとは</a></li>
                     <li><a href="#">お取り扱い商品のご案内</a></li>
@@ -214,6 +278,117 @@
 
     <!-- MAIN BLOCK -->
     <main>
+        <!-- EVENT NEWS SECTION -->
+        <div class="event-new-section">
+            <div class="event-block left-block">
+                <div class="event-image">
+                    <img src="./images/event-blog.jpg" alt="Blog Image">
+                </div>
+                <div class="event-text">
+                    <h2>Blog</h2>
+                    <p>HOA展を大阪であちらこちら...</p>
+                </div>
+            </div>
+            <div class="event-block right-block">
+                <div class="event-image">
+                    <img src="./images/event-new.jpg" alt="Event New Image">
+                </div>
+                <div class="event-text">
+                    <h2>Event - New</h2>
+                    <p>最新情報や会員インタビュー 募集中</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ABOUT SECTION -->
+        <div class="about-section">
+            <h1 class="about-title">About Norteren Europe <span>北欧の花たちとは</span></h1>
+            <h3 class="about-subtitle">花の紹介</h3>
+            <div class="about-container">
+                <!-- Block 1 -->
+                <div class="about-block">
+                    <div class="about-image">
+                        <img src="./images/Edelweiss.jpg" alt="Edelweiss">
+                    </div>
+                    <div class="about-text">
+                        <h4>エーデルワイス (Edelweiss)</h4>
+                        <p>
+                            アルプスの高山に咲くこの花は、北欧の一部でも見られます。白い星形の花びらが特徴で、厳しい環境でも生き抜く力強さを象徴しています。特にスイスやオーストリアでよく見られますが、北欧の一部地域でも見られることがあります。この花は、厳しい環境に耐える力強さを象徴しており、登山者の間では「高山の花」として親しまれています。エーデルワイスは、特にその美しさから、愛や勇気の象徴ともされています。
+                        </p>
+                    </div>
+                </div>
+                <!-- Block 2 -->
+                <div class="about-block reverse">
+                    <div class="about-image">
+                        <img src="./images/vaccinium.jpg" alt="Vaccinium myrtillus">
+                    </div>
+                    <div class="about-text">
+                        <h4>スズラン の花 (Vaccinium myrtillus)</h4>
+                        <p>
+                            スウェーデンの国花でもある、ブルーベリー。<br>北欧の森でよく見られるこの花は、春に小さな白い花を咲かせ、実は美味しいブルーベリーになります。春になると、可愛らしい白やピンクの花を咲かせます。これらの花は、実を結ぶための重要なステップであり、夏には甘くて栄養価の高いブルーベリーが収穫できます。ブルーベリーは、抗酸化物質が豊富で、健康にも良いとされています。
+                        </p>
+                    </div>
+                </div>
+                <!-- Block 3 -->
+                <div class="about-block">
+                    <div class="about-image">
+                        <img src="./images/Viola.jpg" alt="Viola">
+                    </div>
+                    <div class="about-text">
+                        <h4>バオレット (Viola)</h4>
+                        <p>
+                            ノルウェーでは、バイオレットが国花として知られています。可憐な紫色の花が特徴で、春に咲き、可憐な姿が特徴です。バイオレットは、愛や誠実さの象徴とされ、古くから多くの文化で親しまれてきました。また、食用としても利用されることがあり、サラダやデザートの飾り付けに使われることもあります。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- GIFT FLOWER SECTION -->
+        <div class="gift-flower-section">
+            <div class="gift-block">
+                <div class="gift-title">
+                    <h1>Gift FLower</h1>
+                    <h2>贈り物用の花のランキング</h2>
+                </div>
+                <div class="ranking-block">
+                    <!-- Block 1 -->
+                     <div class="ranking-content">
+                        <div class="ranking-detail">
+                            <h2>Gift Presents/ギフト・贈答に</h2>
+                            <img src="./images/gift-flower1.jpg" alt="Gift FLower image 1">
+                        </div>
+                        <div class="gift-note">
+                            <p>北欧の花で心を贈る。特別な瞬間を彩るギフト</p>
+                        </div>
+                     </div>
+
+                     <!-- Block 2 -->
+                     <div class="ranking-content">
+                        <div class="ranking-detail">
+                            <h2>観賞用</h2>
+                            <img src="./images/gift-flower2.jpg" alt="Gift FLower image 2">
+                        </div>
+                        <div class="gift-note">
+                            <p>北欧の自然をお部屋に。美しさを楽しむ特別な花たち</p>
+                        </div>
+                     </div>
+
+                     <!-- Block 3 -->
+                     <div class="ranking-content">
+                        <div class="ranking-detail">
+                            <h2>フラワーギフトランキング</h2>
+                            <img src="./images/gift-flower3.jpg" alt="Gift FLower image 3">
+                        </div>
+                        <div class="gift-note">
+                            <p>北欧の花をテーマにしたフラワーギフトランキングをご紹介</p>
+                        </div>
+                     </div>
+                </div>
+
+            </div>
+        </div>
+
 
     </main>
     <!-- FOOTER BLOCk -->

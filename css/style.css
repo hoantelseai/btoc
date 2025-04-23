@@ -32,7 +32,7 @@ video,
 canvas,
 svg {
   display: block;
-  max-width: 100%;
+  /* max-width: 100%; */
 }
 /*
     6. 組み込みのフォームタイポグラフィスタイルを削除する。
@@ -96,8 +96,8 @@ h6 {
   height: 50px; /* Adjust as needed */
 }
 .logo img {
-  width: auto;
-  height: 100%;
+  width: 91px;
+  height: 58px;
 }
 
 /* Menu chính */
@@ -239,8 +239,8 @@ h6 {
 /* Dấu X để đóng menu */
 .close-menu {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 30px;
+  right: 30px;
   width: 30px;
   height: 30px;
   cursor: pointer;
@@ -269,7 +269,23 @@ h6 {
 .close-menu::after {
   transform: rotate(-45deg);
 }
+/* Ẩn thanh cuộn khi menu hamburger được mở */
+body.no-scroll {
+  overflow: hidden;
+  height: 100vh; /* Đảm bảo body không vượt quá chiều cao màn hình */
+  width: 100%; /* Đảm bảo chiều rộng cố định */
+  position: fixed; /* Giữ vị trí cố định để tránh nhảy layout */
+}
 
+/* Bù lại chiều rộng của thanh cuộn để tránh giật layout */
+body.no-scroll {
+  padding-right: 15px; /* Giá trị này có thể thay đổi tùy trình duyệt */
+}
+
+/* Đảm bảo hamburger-menu vẫn cuộn được */
+.hamburger-menu {
+  overflow-y: auto; /* Cho phép cuộn trong hamburger-menu */
+}
 /* Style cho tiêu đề chính trong menu hamburger */
 .menu-title {
   text-decoration: none; /* Xóa gạch chân mặc định */
@@ -277,13 +293,22 @@ h6 {
   background: none; /* Xóa background mặc định */
   border: none; /* Xóa border mặc định */
   outline: none; /* Xóa outline mặc định */
+
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  /* width: 100%; */
 }
 
-.menu-title h3 {
+.menu-title h1 {
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 10px;
+  margin: 0; /* Xóa margin mặc định của h1 */
   color: #333; /* Đảm bảo màu chữ rõ ràng */
+  /* flex-grow: 1; */
+  text-align: center;
 }
 
 .menu-title {
@@ -303,20 +328,66 @@ h6 {
   width: 100%;
 }
 
-.hamburger-menu__content {
+.menu-section {
   display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px; /* Khoảng cách giữa các phần trong cột 2 */
+    margin-left: 20px;
+}
+
+.menu-section p {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.menu-section p:hover {
+  color: #aa2537;
+}
+.menu-title .cart-icon {
+  font-size: 24px; /* Kích thước icon */
+  color: #aa2537; /* Màu icon */
+  margin-right: 10px; /* Khoảng cách giữa icon và h1 */
+}
+
+
+.menu-title .link-icon {
+  font-size: 15px; /* Kích thước icon */
+  color: #333; /* Màu icon */
+  margin-left: 10px; /* Khoảng cách giữa h1 và icon */
+}
+
+.hamburger-menu__content {
+  /* display: flex;
   justify-content: space-between;
   max-width: 1200px;
-  margin: 80px auto 0;
+  margin: 80px auto 0; */
+
+  display: flex;
+    flex-direction: row; /* Xếp các cột ngang từ trái sang phải */
+    justify-content: space-between; /* Phân bố đều khoảng cách giữa các cột */
+    align-items: flex-start; /* Căn các cột ở phía trên */
+    /* max-width: 1200px; */
+    margin: 80px auto 0;
+    padding: 0 20px;
+    gap: 120px;
 }
 
 .hamburger-menu__column {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 15px;
+  flex: 1; /* Chia đều chiều rộng cho các cột */
+    min-width: 200px; /* Đảm bảo cột không bị co lại quá nhỏ */
 }
 
-.hamburger-menu__column h3 {
+
+/* .hamburger-menu__column h1 {
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 10px;
@@ -335,7 +406,61 @@ h6 {
   color: #333;
   font-size: 14px;
   transition: color 0.3s;
+} */
+/* Định dạng cho cột 1 (オンラインストア) */
+.hamburger-menu__column:nth-child(1) ul {
+  list-style: none;
+  padding: 0;
 }
+
+.hamburger-menu__column:nth-child(1) ul li {
+  margin-bottom: 10px;
+}
+
+.hamburger-menu__column:nth-child(1) ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.hamburger-menu__column:nth-child(1) ul li a:hover {
+  color: #aa2537;
+}
+
+/* Định dạng cho cột 5 (Social Media Icons) */
+.social-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 0;
+}
+
+.social-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.social-button i {
+  font-size: 30px;
+  color: #333;
+}
+
+.social-button:hover {
+  /* background-color: #f0f0f0; */
+}
+
+.social-button:hover i {
+  color: #aa2537;
+}
+
 
 .mobile-menu-list {
   display: none;
@@ -399,11 +524,11 @@ h6 {
 /* Flowers Animation */
 .flower-container {
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 550px;
-  height: 90vh;
+  height: 100vh;
   max-width: 100%; /* Đảm bảo không vượt quá chiều rộng header */
 }
 
@@ -523,11 +648,9 @@ h6 {
 .play-icon {
   font-size: 30px;
   position: absolute;
-  /* top: 63%;
-    right: 45%; */
-  top: 46%; /* Căn giữa dọc */
-  transform: translateY(-50%); /* Căn giữa chính xác */
-  right: 10px; /* Sát mép phải bên trong .view-more */
+  top: 46%; 
+  transform: translateY(-50%); 
+  right: 10px;
 }
 
 .view-more {
@@ -589,6 +712,333 @@ h6 {
 
 .dot:hover {
   background-color: #fff0b2;
+}
+
+main {
+  width: 100%;
+  /* padding: 30px 0; */
+  /* background-color: #f9f9f9; */
+}
+
+/* EVENT NEW SECTION */
+
+.event-new-section {
+  max-width: 1387px; 
+  margin: 0px auto; /* Cách blog-section 40px và căn giữa */
+  padding: 30px 0px;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px; /* Khoảng cách giữa 2 block */
+}
+
+.event-block {
+  flex: 1; /* Chia đều chiều rộng cho 2 block */
+  display: flex;
+  height: 200px; /* Chiều cao cố định, bạn có thể điều chỉnh */
+  overflow: hidden;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.event-block:hover {
+  opacity: 0.7;
+}
+.event-image {
+  width: 40%; /* Ảnh chiếm 50% chiều rộng */
+  height: 100%;
+  background-color: #fff; /* Nền trắng cho ảnh */
+  /* position: relative; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1; /* Đảm bảo ảnh nằm trên lớp phân cách */
+}
+
+.event-image img {
+  /* width: 115%; */
+  height: 100%;
+  object-fit: cover; /* Đảm bảo ảnh không bị méo */
+}
+
+.event-text {
+  width: 60%; /* Text chiếm 50% chiều rộng */
+  height: 100%;
+  display: flex;
+  flex-direction: column; /* Xếp dọc tiêu đề và mô tả */
+  align-items: flex-start;
+  justify-content: center;
+  color: #fff; /* Chữ trắng */
+  font-size: 24px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2; /* Đảm bảo chữ nằm trên lớp phân cách */
+  text-align: center;
+  padding-left: 40px;
+}
+
+.event-text h2 {
+  font-size: 32px;
+  margin: 0 0 10px 0; /* Khoảng cách dưới tiêu đề */
+}
+
+.event-text p {
+  font-size: 18px;
+  margin: 0;
+  line-height: 1.5;
+  max-width: 80%; /* Giới hạn chiều rộng để tránh tràn */
+}
+
+/* Ẩn chữ ban đầu (dịch xuống dưới và làm mờ) */
+.event-text h2,
+.event-text p {
+  opacity: 0; /* Ẩn hoàn toàn */
+  transform: translateY(20px); /* Dịch xuống dưới 20px */
+  transition: all 0.5s ease; /* Hiệu ứng mượt mà trong 0.5 giây */
+}
+
+.event-text.visible h2,
+.event-text.visible p {
+  opacity: 1; /* Hiện ra */
+  transform: translateY(0); /* Trở về vị trí ban đầu */
+}
+
+/* Tạo độ trễ để h3 hiện trước, sau đó p hiện sau */
+.event-text.visible h3 {
+  transition-delay: 0s; /* h3 hiện ngay lập tức */
+}
+
+.event-text.visible p {
+  transition-delay: 0.2s; /* p hiện sau 0.2 giây */
+}
+
+.left-block .event-text {
+  background-color: #0e74e2; /* Xanh nước biển */
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 8% 100%);
+
+}
+
+.right-block .event-text {
+  background-color: #be3043; /* Đỏ đô */
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 8% 100%);
+}
+
+/* ABOUT SECTION */
+.about-section {
+  /* max-width: 1211px; */
+  margin: 0px auto; /* Cách event-new-section 40px và căn giữa */
+  padding: 80px 356px;
+  background-color: #f4f9fe;
+}
+
+.about-title {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 50px;
+  text-align: center;
+
+}
+
+.about-title span {
+  font-size: 32px;
+  display: block; /* Đưa span xuống dòng */
+  margin-top: 30px;
+  text-align: center;
+  color: #444444;
+}
+
+.about-subtitle {
+  font-size: 28px;
+  /* color: #333; */
+  margin-bottom: 25px;
+  text-align: left; /* Căn trái */
+  color: #40669c;
+  font-weight: bold;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column; /* Xếp dọc các khối */
+  gap: 77px; /* Khoảng cách giữa các khối */
+  position: relative; /* Để định vị đường gạch ngang */
+}
+.about-block {
+  display: flex;
+  align-items: flex-start; /* Căn giữa theo chiều dọc */
+  gap: 75px; 
+  /* background-color: #fff; */
+  border-radius: 10px;
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+  /* padding: 20px; */
+  position: relative; /* Để định vị đường gạch ngang */
+}
+
+/* Thêm đường gạch ngang giữa các block */
+.about-block:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  bottom: -38.5px; /* Đặt đường gạch ngang cách block 15px (nửa khoảng cách gap) */
+  left: 0px; /* Căn lề trái đồng bộ với padding */
+  right: 0px; /* Căn lề phải đồng bộ với padding */
+  height: 1px; /* Độ dày của đường gạch ngang */
+  background-color: #ddd; /* Màu của đường gạch ngang */
+}
+
+.about-block.reverse {
+  flex-direction: row-reverse; /* Đảo ngược vị trí: hình phải, text trái */
+}
+
+.about-image {
+  width: 50%; /* Hình ảnh chiếm 50% chiều rộng */
+  height: 350px; /* Chiều cao cố định */
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Đảm bảo ảnh không bị méo */
+  border-radius: 5px;
+}
+
+.about-text {
+  width: 50%; /* Text chiếm 50% chiều rộng */
+  /* padding: 0 20px;  */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Ẩn chữ ban đầu (dịch xuống dưới và làm mờ) */
+.about-text h4,
+.about-text p {
+  opacity: 0; /* Ẩn hoàn toàn */
+  transform: translateY(20px); /* Dịch xuống dưới 20px */
+  transition: all 1s ease; /* Hiệu ứng mượt mà trong 0.5 giây */
+}
+
+/* Khi about-block nằm trong khung nhìn, kích hoạt hiệu ứng hiện lên */
+.about-block.visible .about-text h4,
+.about-block.visible .about-text p {
+  opacity: 1; /* Hiện ra */
+  transform: translateY(0); /* Trở về vị trí ban đầu */
+}
+
+/* Tạo độ trễ để h3 hiện trước, sau đó p hiện sau */
+.about-block.visible .about-text h4 {
+  transition-delay: 0s; /* h3 hiện ngay lập tức */
+}
+
+.about-block.visible .about-text p {
+  transition-delay: 0.4s; /* p hiện sau 0.2 giây */
+}
+
+.about-text h4 {
+  font-size: 26px;
+  color: #333;
+  margin-bottom: 50px;
+}
+
+.about-text p {
+  font-size: 18px;
+  color: #333333;
+  line-height: 36px;
+  /* letter-spacing: 0.12rem; */
+  margin: 0;
+  text-align: justify;
+}
+
+/* GIFT FLOWER SECTION */
+.gift-flower-section {
+  background-color: #faf8df; /* Background màu #faf8df */
+  padding: 100px 80px; /* Giữ padding tương tự như các section khác */
+  margin: 0 auto;
+}
+
+.gift-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Căn giữa theo chiều ngang */
+}
+
+.gift-title {
+  text-align: center; /* Căn giữa tiêu đề h1 và h2 */
+  margin-bottom: 50px; /* Khoảng cách dưới tiêu đề */
+}
+
+.gift-title h1 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 20px; /* Khoảng cách giữa h1 và h2 */
+}
+
+.gift-title h2 {
+  font-size: 28px;
+  color: #444444;
+}
+
+.ranking-block {
+  display: flex; /* Xếp ngang các khối từ trái sang phải */
+  justify-content: space-between; /* Cách đều các khối */
+  gap:45px; /* Khoảng cách giữa các khối */
+  width: 100%; /* Đảm bảo ranking-block chiếm toàn bộ chiều rộng */
+}
+
+.ranking-content {
+  display: flex;
+  flex-direction: column; /* Xếp dọc các thành phần bên trong ranking-content */
+  align-items: flex-start; 
+  flex: 1; /* Chia đều chiều rộng cho 3 khối */
+}
+
+.ranking-detail {
+  width: 100%; /* Đảm bảo ranking-detail chiếm toàn bộ chiều rộng của ranking-content */
+  position: relative; /* Để căn chỉnh background của h2 */
+  overflow: hidden;
+}
+
+.ranking-detail h2 {
+  font-size: 32px;
+  color: #333;
+  background-color: #fecf11; /* Background màu #fecf11 cho h2 */
+  /* padding: 10px 15px;  */
+  display: flex; 
+  height: 63px;
+  margin-bottom: 0px; /* Khoảng cách dưới h2 */
+  text-align: center; /* Căn giữa chữ trong h2 */
+  align-items: center;
+  justify-content: center;
+  width: 100%; /* Chiều rộng bằng với ảnh */
+  box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước */
+  position: relative; /* Để z-index hoạt động */
+  z-index: 2; /* Đảm bảo h2 nằm trên hình ảnh */
+}
+
+.ranking-detail img {
+  width: 100%; /* Ảnh chiếm toàn bộ chiều rộng của ranking-detail */
+  height: 300px; /* Chiều cao cố định cho ảnh, có thể điều chỉnh */
+  object-fit: cover; 
+  display: block; /* Đảm bảo ảnh là block element */
+  transition: opacity 0.3s ease, transform 1s ease-in-out; /* Hiệu ứng mượt mà cho opacity và phóng to */
+  transform-origin: center; /* Điểm gốc phóng to là trung tâm hình ảnh */
+  position: relative; /* Để z-index hoạt động */
+  z-index: 1; /* Đảm bảo hình ảnh nằm dưới h2 */
+  cursor: pointer;
+}
+
+.ranking-detail img:hover {
+  opacity: 0.7;
+  transform: scale(1.4); /* Phóng to hình ảnh lên 5% */
+}
+
+.gift-note {
+  margin-top: 15px; /* Khoảng cách trên đoạn văn */
+  text-align: center; /* Căn giữa đoạn văn */
+}
+
+.gift-note p {
+  font-size: 16px;
+  color: #333;
+  margin: 0;
 }
 
 /* CSS FOR SMALL DEVICE */
@@ -865,7 +1315,7 @@ h6 {
       right: 20px;
       font-size: 16px;
       line-height: 32px;
-      max-width: 400px;
+      /* max-width: 400px; */
     }
   
     .flower-container {
@@ -1112,7 +1562,7 @@ h6 {
     left: 15px;
     font-size: 20px;
     line-height: 30px;
-    max-width: 250px;
+    /* max-width: 250px; */
   }
 
   .flower-container {
@@ -1199,7 +1649,7 @@ h6 {
     left: 30px;
     font-size: 22px;
     line-height: 33px;
-    max-width: 280px;
+    /* max-width: 280px; */
   }
 
   .flower-container {
@@ -1339,7 +1789,7 @@ h6 {
     right: 20px;
     font-size: 12px;
     line-height: 30px;
-    max-width: 450px;
+    /* max-width: 450px; */
     top: 60%;
   }
 
