@@ -22,6 +22,7 @@ body {
   -webkit-font-smoothing: antialiased;
   font-family: "Noto Sans JP", sans-serif;
   color: #3d3d3d;
+  overflow-x: hidden;
 }
 /*
     5. メディアのデフォルトを改善する。
@@ -853,7 +854,7 @@ main {
   margin-bottom: 25px;
   text-align: left; /* Căn trái */
   color: #40669c;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .about-container {
@@ -908,9 +909,12 @@ main {
   justify-content: center;
 }
 
+.text-mobile {
+  display: none;
+}
 /* Ẩn chữ ban đầu (dịch xuống dưới và làm mờ) */
 .about-text h4,
-.about-text p {
+.about-text p{
   opacity: 0; /* Ẩn hoàn toàn */
   transform: translateY(20px); /* Dịch xuống dưới 20px */
   transition: all 1s ease; /* Hiệu ứng mượt mà trong 0.5 giây */
@@ -918,7 +922,7 @@ main {
 
 /* Khi about-block nằm trong khung nhìn, kích hoạt hiệu ứng hiện lên */
 .about-block.visible .about-text h4,
-.about-block.visible .about-text p {
+.about-block.visible .about-text p{
   opacity: 1; /* Hiện ra */
   transform: translateY(0); /* Trở về vị trí ban đầu */
 }
@@ -1041,6 +1045,532 @@ main {
   margin: 0;
 }
 
+/* SERVICE SECTION */
+.service-block {
+  margin: 0 auto;
+  /* padding: 80px 356px; */
+  background-color: #fff;
+}
+
+/* Căn giữa cho service-introduce */
+.service-introduce {
+  text-align: center; /* Căn giữa h1, h2, p */
+  margin: 100px 0px;
+  
+}
+
+.service-introduce h1 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 20px; /* Khoảng cách giữa h1 và h2 */
+  font-weight: bold;
+}
+
+.service-introduce h2 {
+  font-size: 28px;
+  /* color: #40669c; */
+  /* font-weight: bold; */
+  margin-bottom: 70px; /* Khoảng cách giữa h2 và p */
+}
+
+.service-introduce p {
+  font-size: 18px;
+  color: #333;
+  line-height: 36px;
+  letter-spacing: 0.02rem;
+  max-width: 1130px;
+  margin: 0 auto; /* Căn giữa đoạn văn */
+}
+
+/* Service Content */
+.service-content {
+  display: flex;
+  flex-direction: column; /* Xếp dọc các service-flower-block */
+}
+
+/* Service Flower Block */
+.service-flower-block {
+  display: flex;
+  align-items: flex-start; /* Căn giữa theo chiều dọc */
+  gap: 75px; /* Khoảng cách giữa service-sentence và service-imgage */
+  padding: 60px;
+  /* height: 680px; */
+  /* border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+}
+
+/* Màu nền cho từng service-flower-block */
+.service-flower-block:nth-child(1) {
+  background-color: #9f2a53; /* Màu nền cho block 1 */
+}
+
+.service-flower-block:nth-child(2) {
+  background-color: #ffffff; /* Màu nền cho block 2 */
+}
+
+.service-flower-block:nth-child(3) {
+  background-color: #428239; /* Màu nền cho block 3 */
+}
+
+/* Định dạng cho service-sentence */
+.service-sentence {
+  width: 50%; /* Chiếm 50% chiều rộng */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Căn trái h3, p, và service-button-detail */
+}
+
+/* Định dạng cho h3 và p trong service-sentence */
+.service-sentence .thin-title {
+  margin-bottom: 0px;
+  font-weight: 100;
+}
+.service-sentence h3 {
+  font-size: 28px;
+  color: #fff; /* Màu chữ trắng cho h3 để nổi trên nền tối */
+  margin-bottom: 50px;
+  line-height: 46px;
+  letter-spacing: 0.02rem;
+}
+
+
+
+.service-sentence p {
+  font-size: 18px;
+  color: #fff; /* Màu chữ trắng cho p */
+  line-height: 36px;
+  letter-spacing: 0.04rem;
+  margin-bottom: 50px;
+  text-align: justify;
+}
+
+/* Định dạng cho service-button-detail */
+.service-button-detail {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Khoảng cách giữa các phần tử trong service-button-detail */
+}
+
+
+.service-button-detail a {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Khoảng cách giữa các phần tử trong a */
+  text-decoration: none;
+  margin: 0 auto;
+  justify-content: center;
+  background-color: #e0e0e0;
+  height: 100px;
+  width: 491px;
+  border-radius: 20px;
+  position: relative; /* Để tạo hiệu ứng chuyển màu */
+  overflow: hidden; /* Ẩn phần màu thừa khi chuyển đổi */
+  z-index: 1; /* Đảm bảo phần tử a nằm trên lớp ::before */
+}
+/* Tạo lớp phủ cho hiệu ứng chuyển màu từ trên xuống dưới */
+.service-button-detail a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  z-index: -1;
+  transition: height 0.5s ease;
+}
+
+/* Hiệu ứng hover cho service-button-detail không có white-button */
+.service-button-detail a::before {
+  background-color: #4b4b4b;
+}
+
+.service-button-detail a:not(.white-button):hover::before {
+  height: 100%;
+}
+
+.service-button-detail a:not(.white-button) h4 {
+  /* color: #fff; */
+  transition: color 0.3s ease;
+}
+
+.service-button-detail a:not(.white-button):hover h4 {
+  color: #ffffff;
+}
+
+.service-button-detail a:not(.white-button) img {
+  transition: filter 0.3s ease;
+}
+
+.service-button-detail a:not(.white-button):hover img {
+  filter: brightness(0) invert(1); /* Icon trắng khi hover */
+}
+
+/* Hiệu ứng cho white-button */
+.white-button a {
+  /* display: flex; */
+  background-color: white;
+
+} 
+.white-button a::before {
+  background-color: #74092e;
+}
+.white-button a:hover::before {
+  height: 100%;
+}
+.white-button a h4 {
+  color: #9f2a53; /* Màu chữ ban đầu theo class pink-word */
+  transition: color 0.3s ease;
+}
+.white-button a:hover h4 {
+  color: #ffffff; /* Chữ trắng khi hover */
+}
+
+.white-button a img {
+  filter: brightness(0.5) sepia(1) hue-rotate(300deg) saturate(19);
+  transition: filter 0.3s ease;
+}
+
+.white-button a:hover img {
+  filter: brightness(0) invert(1); /* Icon trắng khi hover */
+}
+
+.service-button-detail .pink-word {
+  color: #9f2a53;
+  font-weight: bold;
+}
+
+.service-button-detail h4 {
+  font-size: 26px;
+  color: #fff; /* Màu chữ trắng */
+  margin: 0;
+  font-weight: bold;
+}
+
+.service-button-detail img {
+  width: 20px; /* Kích thước icon */
+  height: 20px;
+}
+
+/* Đảm bảo màu chữ trong block có nền trắng (block 2) */
+.service-flower-block:nth-child(2) h3,
+.service-flower-block:nth-child(2) p,
+.service-flower-block:nth-child(2) .service-button-detail h4,
+.service-flower-block:nth-child(3) .service-button-detail h4  {
+  color: #333; /* Màu chữ đen để nổi trên nền trắng */
+}
+
+/* Định dạng cho service-imgage */
+.service-imgage {
+  width: 50%; /* Chiếm 50% chiều rộng */
+  /* height: 100%; */
+}
+
+.service-imgage img {
+  width: 100%;
+  height: auto;
+  object-fit: contain; /* Đảm bảo ảnh không bị méo */
+  border-radius: 5px;
+}
+
+/* Định dạng cho service-flower-block reverse-style */
+.service-flower-block.reverse-style {
+  flex-direction: row-reverse; /* Đảo ngược: image bên trái, sentence bên phải */
+}
+
+/* SOCIAL MEDIA VIDEO SECTION */
+.social-media-block {
+  /* padding: 100px 80px; */
+  margin: 0 auto;
+  background-color: #fff; /* Nền trắng cho toàn bộ section */
+}
+
+.social-title {
+  text-align: center; /* Căn giữa h1 và h2 */
+  margin: 100px 0px;
+}
+
+.social-title h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px; 
+}
+
+.social-title h2 {
+  font-size: 28px;
+  color: #444444;
+}
+
+.youtube-video {
+  background-color: #cc2626; 
+  padding: 60px 0px; 
+}
+
+.youtube-video h2 {
+  font-size: 32px;
+  color: #fff; 
+  text-align: center; 
+  margin-bottom: 60px;
+}
+
+.youtube-video .video-block {
+  display: flex; 
+  justify-content: center; 
+  gap: 30px; 
+}
+
+.youtube-video .video-block iframe {
+  width: 890px; 
+  height: 500px;
+}
+
+.tiktok-video {
+  background-color: #ffffff; 
+  border-radius: 10px;
+}
+
+.tiktok-video h2 {
+  font-size: 32px;
+  color: #333; 
+  text-align: center; 
+  margin: 60px 0px;
+}
+
+.tiktok-video .video-block {
+  display: flex;
+  justify-content: center; 
+  max-width: 100%; /* Đảm bảo container không vượt quá viewport */
+  overflow-x: hidden; /* Ngăn tràn ngang */
+
+}
+
+.tiktok-video .video-block blockquote {
+  max-width: 100%; /* Đảm bảo không vượt quá container cha */
+  min-width: 0; /* Cho phép thu nhỏ tự do */
+  width: 100%; /* Chiếm toàn bộ chiều rộng container cha */
+}
+
+/* CONTACT SECTION */
+.contact-block {
+  background-color: #efefef; 
+  padding: 100px 80px; 
+  margin: 0 auto;
+}
+
+.contact-title {
+  text-align: center;
+  margin-bottom: 50px; 
+}
+
+.contact-title h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.contact-title h2 {
+  font-size: 28px;
+  color: #444444;
+  margin-bottom: 100px;
+}
+
+.web-contact {
+  display: flex; 
+  justify-content: center;
+  gap: 30px; 
+  flex-wrap: wrap;
+}
+
+.web-block {
+  flex: 1;
+  min-width: 300px; 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.web-block h3 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px; 
+  text-align: center;
+}
+
+.blue-contact {
+  background-color: #2c77c7;
+  display: flex; 
+  align-items: center;
+  width: 100%; 
+  border-radius: 10px;
+}
+
+.blue-contact img {
+  object-fit: cover; 
+  margin-right: 20px; 
+}
+
+.yellow-contact {
+  background-color: #fecf11; 
+  display: flex; 
+  align-items: center; 
+  width: 100%; 
+  border-radius: 10px; 
+}
+
+.yellow-contact img {
+  object-fit: cover;
+  margin-right: 20px; 
+}
+
+.web-content {
+  display: flex; 
+  align-items: center; 
+  gap: 15px;
+}
+
+.web-content img {
+  width: auto; 
+  height: auto;
+}
+
+.web-content p {
+  font-size: 37.57px;
+  color: #fff;
+  margin: 0;
+}
+.web-content .phone-color {
+  color: black;
+}
+
+/* BREADCRUMB NAVIGATION */
+.breadcrumb {
+  margin: 0 auto; /* Căn giữa và cách contact-block 30px */
+  padding: 250px 80px; /* Padding ngang để căn chỉnh */
+  display: flex; /* Xếp ngang các breadcrumb-item */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  gap: 10px; /* Khoảng cách giữa các item và divider */
+  font-size: 16px;
+  background-color: #efefef;
+}
+
+.breadcrumb-item {
+  text-decoration: none; /* Bỏ gạch chân mặc định */
+  color: #333; /* Màu chữ mặc định */
+  transition: color 0.3s ease; /* Hiệu ứng chuyển màu khi hover */
+}
+
+.breadcrumb-item:hover {
+  color: #aa2537; /* Màu chữ khi hover */
+}
+
+.breadcrumb-item.active {
+  /* color: #aa2537;  */
+  font-weight: bold; /* Làm đậm để nổi bật */
+  pointer-events: none; /* Vô hiệu hóa click trên item hiện tại */
+}
+
+.breadcrumb-divider {
+  color: #333; /* Màu của dấu phân cách */
+}
+
+
+/* FOOTER BLOCK */
+footer {
+  /* padding: 60px 80px;  */
+  margin: 0 auto;
+}
+
+.footer-container {
+  background-color: #efefef; /* Background màu #efefef */
+  margin: 0 auto;
+  display: flex; /* Xếp ngang các cột */
+  justify-content: space-between; /* Cách đều các cột */
+  gap: 30px; /* Khoảng cách giữa các cột */
+  flex-wrap: wrap; /* Cho phép wrap nếu không đủ không gian */
+  padding: 40px; /* Padding bên trong container */
+}
+
+.footer-column {
+  flex: 1; /* Chia đều chiều rộng cho các cột */
+  min-width: 200px; /* Đảm bảo cột không bị co lại quá nhỏ */
+}
+
+
+.footer-column h4 {
+  font-size: 26px;
+  /* font-weight: bold; */
+  color: #333;
+  margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
+  text-align: left; /* Căn lề trái */
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  display: flex; /* Xếp icon và link ngang hàng */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  margin-bottom: 10px; /* Khoảng cách giữa các mục */
+}
+
+.footer-column ul li img {
+  width: auto;
+  height: 10px;
+  margin-right: 10px; /* Khoảng cách giữa icon và link */
+}
+
+.footer-column ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+  color: #aa2537; /* Màu chữ khi hover */
+}
+
+.footer-social {
+  min-width: 100px; /* Đảm bảo cột không bị co lại quá nhỏ */
+}
+
+.footer-social-icons {
+  display: flex;
+  flex-direction: column; /* Xếp dọc các biểu tượng */
+  gap: 15px; /* Khoảng cách giữa các biểu tượng */
+}
+
+.social-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.footer-social-button i {
+  font-size: 30px;
+  color: #333;
+}
+
+
+
+.footer-social-button:hover i {
+  color: #aa2537; /* Màu biểu tượng khi hover */
+}
+
+.mobile-service {
+  display: none;
+}
+
+
 /* CSS FOR SMALL DEVICE */
 
 @media only screen and (max-width: 1366px) {
@@ -1123,6 +1653,248 @@ main {
 
   .play-icon {
     font-size: 30px;
+  }
+
+  .event-new-section {
+    /* max-width: 1000px; */
+    padding: 30px 80px;
+    gap: 20px;
+  }
+  .event-block {
+    height: 180px;
+  }
+
+  .event-text h2 {
+    font-size: 28px;
+  }
+
+  .event-text p {
+    font-size: 16px;
+    max-width: 100%;
+  }
+
+  .about-section {
+    padding: 60px 150px;
+  }
+
+  .about-title {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+
+  .about-title span {
+    font-size: 28px;
+    margin-top: 20px;
+  }
+
+  .about-subtitle {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .about-container {
+    gap: 60px;
+  }
+
+  .about-block {
+    gap: 50px;
+  }
+
+  .about-image {
+    height: 300px;
+  }
+
+  .about-text h4 {
+    font-size: 22px;
+    margin-bottom: 40px;
+  }
+
+  .about-text p {
+    font-size: 16px;
+    line-height: 32px;
+  }
+
+  .gift-flower-section {
+    padding: 80px 40px;
+  }
+
+  .gift-title h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+
+  .gift-title h2 {
+    font-size: 24px;
+  }
+
+  .ranking-block {
+    gap: 24px;
+  }
+
+  .ranking-detail h2 {
+    font-size: 24px;
+    height: 55px;
+  }
+
+  .ranking-detail img {
+    height: 200px;
+  }
+
+  .gift-note p {
+    font-size: 14px;
+  }
+
+  .service-introduce {
+    margin: 80px 0;
+  }
+
+  .service-introduce h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+
+  .service-introduce h2 {
+    font-size: 24px;
+    margin-bottom: 60px;
+  }
+
+  .service-introduce p {
+    font-size: 16px;
+    line-height: 32px;
+    /* max-width: 900px; */
+  }
+
+  .service-flower-block {
+    /* gap: 50px;
+    padding: 40px; */
+    /* height: 600px; */
+    gap: 50px;
+    /* margin-bottom: 30px; */
+  
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  /* .flower-block-detail {
+    height: 450px;
+  } */
+  .service-imgage img {
+    height: 80%;
+  }
+  /* .service-sentence {
+    height: 450px;
+  } */
+
+  .service-sentence h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    line-height: 40px;
+  }
+
+  .service-sentence p {
+    font-size: 16px;
+    line-height: 32px;
+    margin-bottom: 20px;
+  }
+
+  .service-button-detail a {
+    height: 80px;
+    width: 450px;
+  }
+
+  .service-button-detail h4 {
+    font-size: 22px;
+  }
+
+  .social-title {
+    margin: 80px 0;
+  }
+
+  .social-title h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+
+  .social-title h2 {
+    font-size: 24px;
+  }
+
+  .youtube-video {
+    padding: 50px 0;
+  }
+
+  .youtube-video h2 {
+    font-size: 28px;
+    margin-bottom: 50px;
+  }
+
+  .youtube-video .video-block iframe {
+    width: 600px;
+    height: 400px;
+  }
+
+  .tiktok-video h2 {
+    font-size: 28px;
+    margin: 50px 0;
+  }
+
+  .tiktok-video .video-block {
+    gap: 20px;
+  }
+  .tiktok-video .video-block blockquote {
+   
+    min-width: 200px; 
+  }
+
+  .contact-block {
+    padding: 80px 40px;
+  }
+
+  .contact-title h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+
+  .contact-title h2 {
+    font-size: 24px;
+    margin-bottom: 80px;
+  }
+
+  .web-block h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  .web-content p {
+    font-size: 28px;
+  }
+  .blue-contact img {
+    width: 50%;
+  }
+  .yellow-contact img {
+    width: 50%;
+  }
+  .web-content img {
+    height: 40px;
+    width: auto;
+    margin-right: 0px;
+  }
+
+  .footer-container {
+    padding: 30px;
+    gap: 20px;
+  }
+
+  .footer-column h4 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  .footer-column ul li a {
+    font-size: 16px;
+  }
+
+  .footer-social-button i {
+    font-size: 26px;
   }
 }
 
@@ -1367,6 +2139,9 @@ main {
   
 /* STYLES FOR DEVICES WITH WIDTH <= 820px (including phones and iPads in portrait/landscape when width <= 820px) */
 @media only screen and (max-width: 820px) {
+  body {
+    overflow-x: hidden;
+  }
   .top-section {
     height: 480px;
   }
@@ -1462,6 +2237,15 @@ main {
     transform: translateY(-50%);
     width: 300px;
     height: 70vh;
+    overflow: hidden; /* Ngăn nội dung tràn ra ngoài */
+    max-width: 100%; /* Đảm bảo không vượt quá viewport */
+  }
+
+  .flower img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    max-width: 100%; /* Đảm bảo hình ảnh không vượt quá container */
   }
 
   .card-slider-container {
@@ -1510,10 +2294,357 @@ main {
     width: 8px;
     height: 8px;
   }
+  .event-new-section {
+    flex-direction: column; /* Stack event-block vertically */
+    align-items: center; /* Center the blocks horizontally */
+    padding: 20px 15px; /* Adjust padding for smaller screens */
+    gap: 15px; /* Reduce gap between blocks */
+    max-width: 100%; /* Ensure full width usage */
+  }
+
+  .event-block {
+    width: 100%; /* Ensure each block takes full width */
+    max-width: 400px; /* Limit the maximum width for better alignment */
+    height: 150px; /* Adjust height for mobile */
+    margin: 0 auto; /* Center the block */
+  }
+
+  .event-text h2 {
+    font-size: 20px; /* Slightly larger text for readability */
+  }
+
+  .event-text p {
+    font-size: 14px; /* Adjust font size for mobile */
+    max-width: 90%; /* Ensure text doesn't overflow */
+  }
+
+  .event-text {
+    padding-left: 30px; /* Adjust padding for mobile */
+  }
+
+  .about-section {
+    padding: 40px 20px; /* Giảm padding để vừa với màn hình nhỏ, canh đều hai bên */
+  }
+
+  .about-title {
+    font-size: 28px; /* Giảm kích thước tiêu đề cho phù hợp */
+    margin-bottom: 30px;
+  }
+
+  .about-title span {
+    font-size: 24px;
+    margin-top: 15px;
+  }
+
+  .about-subtitle {
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-align: center; /* Căn giữa tiêu đề phụ */
+  }
+
+  .about-container {
+    gap: 40px; /* Giảm khoảng cách giữa các block */
+  }
+
+  .about-block {
+    flex-direction: column; /* Xếp dọc hình ảnh và text */
+    align-items: center; /* Căn giữa theo chiều ngang */
+    gap: 20px; /* Giảm khoảng cách giữa hình ảnh và text */
+  }
+
+  /* Đảm bảo không có đường gạch ngang giữa các block trên mobile */
+  .about-block:not(:last-child)::after {
+    display: none; /* Ẩn đường gạch ngang */
+  }
+
+  .about-block.reverse {
+    flex-direction: column; /* Vẫn xếp dọc, không đảo ngược */
+  }
+
+  .about-image {
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    height: 250px; /* Giảm chiều cao hình ảnh */
+  }
+  
+  .about-image img {
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+ 
+  .about-text {
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    text-align: center; 
+    display: flex;
+    flex-direction: column;
+font-size: 15px;
+  }
+
+  .about-image .about-text .text-mobile {
+    display: block;
+  }
+
+  .about-text h4 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    display: none;
+  }
+
+  .about-text p {
+    font-size: 14px;
+    /* margin-top: 20px; */
+    line-height: 28px;
+    text-align: justify; /* Căn đều hai bên đoạn văn */
+  }
+  .about-block.visible .about-text p {
+    margin: 40px 10px 0 10px;
+  }
+  .gift-flower-section {
+    padding: 60px 20px; /* Giảm padding để canh đều hai bên */
+  }
+
+  .gift-title h1 {
+    font-size: 28px; /* Giảm kích thước tiêu đề */
+    margin-bottom: 10px;
+  }
+
+  .gift-title h2 {
+    font-size: 20px;
+  }
+
+  .ranking-block {
+    flex-direction: column; /* Xếp dọc các ranking-content */
+    align-items: center; /* Căn giữa theo chiều ngang */
+    gap: 30px; /* Giảm khoảng cách giữa các block */
+  }
+
+  .ranking-content {
+    width: 100%; /* Chiếm toàn bộ chiều rộng container cha */
+    max-width: 400px; /* Giới hạn chiều rộng tối đa để tránh quá rộng */
+  }
+
+  .ranking-detail h2 {
+    font-size: 24px;
+    height: 50px;
+  }
+
+  .ranking-detail img {
+    height: 200px; /* Giảm chiều cao hình ảnh */
+  }
+
+  .gift-note p {
+    font-size: 14px;
+    text-align: center; /* Căn giữa đoạn văn */
+  }
+ 
+  .service-introduce {
+    /* margin: 30px 0;
+    padding: 0 25px; */
+    margin: 0px;
+    padding: 40px 25px;
+  }
+
+  .service-introduce p {
+text-align: justify;
+font-size: 13px;
+  }
+
+  .service-flower-block {
+    flex-direction: column; /* Xếp dọc trên thiết bị di động */
+    align-items: center; /* Căn giữa theo chiều ngang */
+    gap: 30px; /* Giảm khoảng cách giữa sentence và image */
+    padding: 40px 20px; /* Giảm padding */
+    height: auto; /* Bỏ chiều cao cố định để tự động điều chỉnh */
+  }
+
+  .service-flower-block.reverse-style {
+    flex-direction: column; /* Đảm bảo xếp dọc, không đảo ngược */
+  }
+
+  .service-sentence {
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    align-items: center; /* Căn giữa nội dung */
+    order: 1; /* Đặt service-sentence ở dưới cùng */
+  }
+
+  .service-sentence h3 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    line-height: 40px;
+    text-align: center; /* Căn giữa tiêu đề */
+  }
+
+  .service-sentence p {
+    font-size: 16px;
+    line-height: 32px;
+    margin-bottom: 30px;
+    text-align: center; /* Căn giữa đoạn văn */
+  }
+
+  .service-imgage {
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    order: -1; /* Đưa service-imgage lên trên */
+  }
+
+  .service-imgage img {
+    width: 100%;
+    height: 250px; /* Chiều cao hợp lý để hình ảnh hiển thị đầy đủ */
+    object-fit: contain; /* Đảm bảo không bị cắt, hiển thị toàn bộ hình ảnh */
+  }
+
+  .service-button-detail {
+    width: 100%;
+    /* max-width: 200px; */
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .service-button-detail a {
+    width: 100%;
+    height: 60px; /* Giảm chiều cao nút */
+  }
+
+  .service-button-detail h4 {
+    font-size: 18px;
+  }
+
+  .mobile-service {
+    display: block;
+    width: 100%; /* Đảm bảo chiếm toàn bộ chiều rộng */
+    order: -1; /* Đặt mobile-service ngay dưới service-imgage */
+    text-align: center; /* Căn giữa nội dung */
+  }
+
+  .mobile-service h3 {
+    font-size: 20px; /* Điều chỉnh kích thước chữ cho phù hợp */
+    margin-bottom: 10px;
+    line-height: 36px;
+    color: #fff; /* Đảm bảo màu chữ trắng để nổi trên nền tối */
+    text-align: left;
+    font-weight: 400;
+  }
+
+  .mobile-service .thin-title {
+    font-weight: 100; /* Đã có trong CSS gốc, giữ nguyên */
+    margin-bottom: 0px;
+  }
+
+  .flower-block-detail h3 {
+    display: none; /* Ẩn cả thin-title và tiêu đề chính */
+  }
+
+  .contact-block {
+    padding: 40px 15px;
+  }
+  .contact-title h1 {
+    font-size: 24px;
+  }
+
+  .contact-title h2 {
+    font-size: 18px;
+    margin-bottom: 0px;
+  }
+  .contact-title {
+    margin-bottom: 40px;
+  }
+
+  .web-block h3 {
+    font-size: 20px;
+    text-align: left;
+}
+
+.blue-contact img {
+  margin-right: 0px;
+}
+
+.yellow-contact img {
+  margin-right: 0px;
+}
+
+.web-content img {
+  height: 18px;
+}
+
+.web-content p {
+  font-size: 16px;
+}
+  /* YouTube Video Section */
+  .youtube-video {
+    padding: 40px 20px; /* Giảm padding để canh đều hai bên */
+  }
+
+  .youtube-video h2 {
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+
+  .youtube-video .video-block {
+    display: flex;
+    justify-content: center;
+    gap: 0; /* Bỏ khoảng cách vì chỉ giữ 1 video */
+    max-width: 100%; /* Đảm bảo không vượt quá màn hình */
+    overflow-x: hidden; /* Ngăn tràn ngang */
+  }
+
+  /* Ẩn các video từ video thứ 2 trở đi */
+  .youtube-video .video-block iframe:not(:first-child) {
+    display: none;
+  }
+
+  /* Điều chỉnh kích thước video đầu tiên */
+  .youtube-video .video-block iframe {
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    max-width: 560px; /* Giới hạn chiều rộng tối đa */
+    height: 315px; /* Tỷ lệ 16:9 (560 * 9/16 = 315) */
+    box-sizing: border-box;
+  }
+
+  /* TikTok Video Section */
+  .tiktok-video {
+    padding: 0 20px; /* Thêm padding để canh đều hai bên */
+  }
+
+  .tiktok-video h2 {
+    font-size: 24px;
+    margin: 40px 0;
+  }
+
+  .tiktok-video .video-block {
+    display: flex;
+    flex-direction: row; /* Xếp ngang 2 video */
+    justify-content: center; /* Căn giữa */
+    gap: 10px; /* Khoảng cách giữa 2 video */
+    max-width: 100%; /* Đảm bảo không vượt quá màn hình */
+    overflow-x: hidden; /* Ngăn tràn ngang */
+    flex-wrap: nowrap; /* Không cho phép xuống dòng */
+  }
+
+  /* Ẩn các video từ video thứ 3 trở đi */
+  /* .tiktok-video .video-block blockquote:nth-child(n+3) {
+    display: none;
+  } */
+  .tiktok-video .video-block .tiktok-hidden {
+    display: none;
+  }
+
+  /* Điều chỉnh kích thước 2 video đầu tiên */
+  .tiktok-video .video-block blockquote {
+    width: calc(50% - 5px); /* 50% chiều rộng, trừ đi nửa khoảng cách gap */
+    max-width: 280px; /* Giới hạn chiều rộng tối đa mỗi video */
+    min-width: 200px; /* Đảm bảo không quá nhỏ */
+    box-sizing: border-box;
+  }
+/* .video-block .tiktok-hidden {
+  display: none;
+}  */
+
+.breadcrumb {
+  padding: 0;
+}
 }
 
 /* STYLES FOR SMALL PHONES (320px - 480px) */
 @media only screen and (max-width: 480px) {
+
   .top-section {
     height: 400px;
   }
@@ -1607,6 +2738,250 @@ main {
   .dot {
     width: 6px;
     height: 6px;
+  }
+
+  /* .event-new-section {
+    padding: 10px 5px;
+    gap: 10px;
+  }
+
+  .event-block {
+    height: 120px;
+  }
+
+  .event-text h2 {
+    font-size: 16px;
+  }
+
+  .event-text p {
+    font-size: 10px;
+    max-width: 95%;
+  }
+
+  .event-text {
+    padding-left: 20px;
+  } */
+
+  .event-new-section {
+    flex-direction: column; /* Stack event-block vertically */
+    align-items: center; /* Center the blocks horizontally */
+    padding: 10px 5px; /* Minimal padding for very small screens */
+    gap: 10px; /* Reduce gap further for small screens */
+    height: 200px;
+  }
+
+  .event-block {
+    width: 100%; /* Full width for small screens */
+    max-width: 320px; /* Limit width for small phones */
+    height: 120px; /* Adjust height for small screens */
+    margin: 0 auto; /* Center the block */
+  }
+
+  .event-text h2 {
+    font-size: 16px; /* Smaller text for very small screens */
+  }
+
+  .event-text p {
+    font-size: 2.6vw; /* Smaller text for very small screens */
+    max-width: 100%; /* Ensure text fits */
+  }
+
+  .event-text {
+    padding-left: 20px; /* Adjust padding for small screens */
+  }
+  .event-image img{
+    width: 115%;
+
+  }
+
+  .about-section {
+    padding: 30px 15px; /* Giảm padding hơn nữa */
+  }
+
+  .about-title {
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+
+  .about-title span {
+    font-size: 20px;
+  }
+
+  .about-subtitle {
+    font-size: 18px;
+  }
+
+  .about-container {
+    gap: 30px;
+  }
+
+  .about-block {
+    gap: 15px;
+  }
+
+  .about-image {
+    height: 200px; /* Giảm chiều cao hình ảnh hơn nữa */
+  }
+
+  .about-text h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  .about-text p {
+    font-size: 13px;
+    line-height: 26px;
+  }
+
+  .gift-flower-section {
+    padding: 40px 15px; /* Giảm padding hơn nữa */
+  }
+
+  .gift-title h1 {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  .gift-title h2 {
+    font-size: 18px;
+  }
+
+  .ranking-block {
+    gap: 20px; /* Giảm khoảng cách hơn nữa */
+  }
+
+  .ranking-content {
+    max-width: 320px; /* Giới hạn chiều rộng tối đa cho màn hình nhỏ */
+  }
+
+  .ranking-detail h2 {
+    font-size: 16px;
+    height: 45px;
+  }
+
+  .ranking-detail img {
+    height: 180px; /* Giảm chiều cao hình ảnh hơn nữa */
+  }
+
+  .gift-note p {
+    font-size: 13px;
+    text-align: left;
+  }
+
+  .service-section {
+    padding: 40px 15px; /* Đã có, giữ nguyên */
+  }
+
+  .service-flower-block {
+    padding: 30px 15px;
+    gap: 0px;
+  }
+
+  .service-introduce h2 {
+    margin-bottom: 20px;
+  }
+
+  .service-introduce h1 {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  .service-introduce h2 {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  .service-introduce p {
+    font-size: 13px;
+  }
+  .service-sentence h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    line-height: 36px;
+  }
+
+  .service-sentence p {
+    font-size: 13px;
+    line-height: 28px;
+    margin-bottom: 20px;
+    text-align: justify;
+  }
+
+  .service-imgage img {
+    height: 200px; /* Giảm chiều cao hình ảnh cho màn hình nhỏ */
+  }
+
+  .service-button-detail {
+    /* max-width: 180px;
+    padding: 8px 16px; */
+    width: 333px;
+    height: 77px;
+    font-size: 13px;
+  }
+  .service-button-detail img {
+    height: 15px;
+    width: 15px;
+  }
+  .service-button-detail a {
+    /* height: 50px; */
+    border-radius: 5px;
+    gap: 15px;
+  }
+  .social-title {
+    margin: 40px 0;
+  }
+  .social-title h1 {
+    font-size:24px ;
+  }
+  .social-title h2 {
+    font-size: 18px;
+  }
+  .service-button-detail h4 {
+    font-size: 15px;
+  }
+  .mobile-service h3 {
+    font-size: 18px;
+  }
+  /* YouTube Video Section */
+  .youtube-video {
+    padding: 30px 15px; /* Giảm padding hơn nữa */
+  }
+
+  .youtube-video h2 {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+
+  .youtube-video .video-block iframe {
+    max-width: 320px; /* Giảm chiều rộng tối đa */
+    height: 180px; /* Tỷ lệ 16:9 (320 * 9/16 = 180) */
+  }
+
+  /* TikTok Video Section */
+  .tiktok-video {
+    padding: 0 15px;
+  }
+
+  .tiktok-video h2 {
+    font-size: 20px;
+    margin: 30px 0;
+  }
+
+  .tiktok-video .video-block {
+    gap: 8px; /* Giảm khoảng cách giữa 2 video */
+  }
+
+  .tiktok-video .video-block blockquote {
+    width: calc(50% - 4px); /* Điều chỉnh lại chiều rộng */
+    max-width: 160px; /* Giảm chiều rộng tối đa */
+    min-width: 340px; 
+  }
+  /* .tiktok-video .video-block blockquote iframe {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100%;
+  } */
+  .breadcrumb {
+    padding: 0;
   }
 }
 
@@ -1734,6 +3109,8 @@ main {
   .play-icon {
     font-size: 24px;
   }
+
+ 
 }
 
 /* STYLES FOR DEVICES WITH WIDTH > 820px (including phones and iPads in landscape) */
