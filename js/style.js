@@ -140,3 +140,4 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("resize", checkVisibility);
     checkVisibility(); // Kiểm tra ngay khi trang tải
   });
+
