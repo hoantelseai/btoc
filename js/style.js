@@ -1,65 +1,66 @@
+// JavaScript animation for the top Flower background
 const header = document.getElementById("header");
 const flowers = [
-    { id: "flower1", color: "#fecf11" }, // Vàng cho flower1
-    { id: "flower2", color: "#FE7C24" }, // Cam cho flower2
-    { id: "flower3", color: "#2ED44E" }, // Xanh cho flower3
-    { id: "flower4", color: "#DA7AFF" }  // Hồng cho flower4
+    { id: "flower1", color: "#fecf11" }, // Yellow for flower1
+    { id: "flower2", color: "#FE7C24" }, // Orange for flower2
+    { id: "flower3", color: "#2ED44E" }, // Green for flower3
+    { id: "flower4", color: "#DA7AFF" }  // Pink for flower4
 ];
 
-const displayDuration = 11000; // 11 giây mỗi hoa
-const totalCycle = 44000; // Tổng chu kỳ cho 4 hoa (44 giây)
-const flowerDelay = 500; // Hoa hiển thị sau màu nền 0.5 giây (được set trong CSS)
-let startTime = Date.now(); // Lưu thời gian bắt đầu ngay khi trang tải
+const displayDuration = 11000; // 11 seconds per flower
+const totalCycle = 44000; // Total cycle for 4 flowers (44 seconds)
+const flowerDelay = 500;// Flower appears 0.5 seconds after the background color (set in CSS)
+let startTime = Date.now(); // Store the start time as soon as the page loads
 let animationFrameId = null;
 
-// Hàm tính hoa hiện tại và cập nhật màu nền dựa trên thời gian
+// Function to calculate the current flower and update the background color based on time
 function updateBackground() {
-    const elapsedTime = Date.now() - startTime; // Thời gian đã trôi qua kể từ khi bắt đầu
-    const timeInCycle = elapsedTime % totalCycle; // Thời gian trong chu kỳ 44 giây
-    const currentIndex = Math.floor(timeInCycle / displayDuration); // Tính chỉ số hoa hiện tại
+    const elapsedTime = Date.now() - startTime; // Time elapsed since the start
+    const timeInCycle = elapsedTime % totalCycle; // Time in the 44-second cycle
+    const currentIndex = Math.floor(timeInCycle / displayDuration); // Calculate the current flower index
     const currentFlower = flowers[currentIndex];
-    header.style.backgroundColor = currentFlower.color; // Cập nhật màu nền
+    header.style.backgroundColor = currentFlower.color; // Update the background color
 
-    // Tiếp tục cập nhật bằng requestAnimationFrame để đảm bảo đồng bộ
+    // Continue updating using requestAnimationFrame for synchronization
     animationFrameId = requestAnimationFrame(updateBackground);
 }
 
-// Khởi tạo và bắt đầu cập nhật màu nền
+// Initialize and start updating the background color
 function startBackgroundChange() {
-    if (animationFrameId) cancelAnimationFrame(animationFrameId); // Hủy frame cũ nếu có
-    updateBackground(); // Bắt đầu cập nhật màu nền
+    if (animationFrameId) cancelAnimationFrame(animationFrameId); //  Cancel the old frame if there is one
+    updateBackground(); // Start updating the background color
 }
 
-// Xử lý khi tab trở lại trạng thái active
+// Handle when the tab returns to the active state
 document.addEventListener('visibilitychange', () => {
     if (document.visibilityState === 'visible') {
-        // Khi tab trở lại trạng thái active, tiếp tục cập nhật màu nền
+        // When the tab returns to active state, continue updating the background color
         startBackgroundChange();
     } else {
-        // Khi tab không active, hủy requestAnimationFrame để tiết kiệm tài nguyên
+        // When the tab is not active, cancel requestAnimationFrame to save resources
         if (animationFrameId) cancelAnimationFrame(animationFrameId);
     }
 });
 
-// Khởi động ban đầu
+// Initial startup
 startBackgroundChange();
 
 
-// JavaScript để mở/đóng menu hamburger
+// JavaScript to open/close the hamburger menu
 const hamburger = document.querySelector('.hamburger');
 const closeMenu = document.querySelector('.close-menu');
 const hamburgerMenu = document.querySelector('.hamburger-menu');
 
-// Mở menu khi nhấp vào hamburger
+// Open the menu when clicking the hamburger
 hamburger.addEventListener('click', () => {
     hamburgerMenu.classList.add('active');
-    document.body.classList.add('no-scroll'); // Thêm class no-scroll để ẩn thanh cuộn
+    document.body.classList.add('no-scroll'); // Add no-scroll class to hide the scrollbar
 });
 
-// Đóng menu khi nhấp vào dấu X
+// Close the menu when clicking the X
 closeMenu.addEventListener('click', () => {
     hamburgerMenu.classList.remove('active');
-    document.body.classList.remove('no-scroll'); // Xóa class no-scroll để khôi phục cuộn
+    document.body.classList.remove('no-scroll'); // Remove no-scroll class to restore scrolling
 });
 
 // Card Slider functionality
@@ -92,4 +93,5 @@ dots[0].classList.add('active');
 
 let slideInterval = setInterval(showSlides, 5000);
 
-
+// Top page icon 
+document.querySelector('.top-page-icon').addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
