@@ -1415,7 +1415,7 @@ footer {
 .footer__column {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .footer-column-content {
@@ -3466,7 +3466,7 @@ footer {
   }
 
   .about-block .about-text p {
-    width: 70%;
+    width: 65%;
     text-align: justify;
     display: flex;
     margin: 0px auto;
