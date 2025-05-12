@@ -3459,7 +3459,8 @@ footer {
 
   .flower-container {
     width: 280px;
-    height: 80vh;
+    height: 100vh;
+    top: 50%;
   }
 
   .card-slider-container {
