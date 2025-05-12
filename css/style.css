@@ -497,8 +497,8 @@ body.no-scroll {
   width: 100%;
   height: 100%;
   opacity: 0;
-  animation: shrinkFade 44s infinite;
-  animation-delay: 0.5s;
+  transform: scale(0.75);
+  transition: opacity 0.5s linear;
 }
 
 .flower img {
@@ -507,47 +507,6 @@ body.no-scroll {
   object-fit: contain;
 }
 
-#flower1 {
-  animation-delay: 0.5s;
-}
-
-#flower2 {
-  animation-delay: 11.5s;
-}
-
-#flower3 {
-  animation-delay: 22.5s;
-}
-
-#flower4 {
-  animation-delay: 33.5s;
-}
-
-@keyframes shrinkFade {
-  0% {
-    opacity: 0;
-    transform: scale(1);
-  }
-  2.27% {
-    /* 1s/44s: fully visible */
-    opacity: 1;
-    transform: scale(1);
-  }
-  22.73% {
-    /* 10s/44s: slowly shrink */
-    opacity: 1;
-    transform: scale(0.8);
-  }
-  25% {
-    /* 11s/44s: disappear quickly */
-    opacity: 0;
-    transform: scale(0.75);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0.75);
-  }
-}
 
 /* CARD SLIDER CSS */
 
