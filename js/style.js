@@ -75,6 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const hamburger = document.querySelector('.hamburger');
   const closeMenu = document.querySelector('.close-menu');
   const hamburgerMenu = document.querySelector('.hamburger-menu');
+  const menuLinks = document.querySelectorAll('.menu-section a');
 
   // Check if hamburger menu elements exist
   if (!hamburger || !closeMenu || !hamburgerMenu) {
@@ -95,6 +96,15 @@ document.addEventListener('DOMContentLoaded', () => {
       hamburgerMenu.classList.remove('active');
       document.body.classList.remove('no-scroll');
   });
+
+ 
+  menuLinks.forEach(link => {
+    link.addEventListener('click', (event) => {
+        console.log('Menu link clicked!'); // Debug
+        hamburgerMenu.classList.remove('active');
+        document.body.classList.remove('no-scroll');
+    });
+});
 
   // Card Slider functionality
   const slides = document.querySelectorAll('.slide');
