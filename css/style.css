@@ -70,7 +70,6 @@ h6 {
   height: 679px;
   position: relative;
   margin: 0 auto;
-  position: relative;
   background-position: center;
   transition: background-color 0.5s ease;
   overflow: hidden;
@@ -82,7 +81,7 @@ h6 {
   align-items: center;
   padding: 20px;
   width: 100%;
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   z-index: 10;
@@ -107,7 +106,13 @@ h6 {
   justify-content: center;
   text-align: left;
 }
-
+.logo-slogan a {
+  all: unset;
+  text-decoration: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
 .logo-slogan p {
   margin: 0;
   font-size: 14px;
@@ -329,6 +334,13 @@ body.no-scroll {
   margin-left: 20px;
 }
 
+.menu-section a {
+  all: unset;
+  text-decoration: none;
+  color: inherit;
+  font: inherit;
+}
+
 .menu-section p {
   margin: 0;
   font-size: 24px;
@@ -506,7 +518,6 @@ body.no-scroll {
   height: 100%;
   object-fit: contain;
 }
-
 
 /* CARD SLIDER CSS */
 
@@ -921,6 +932,7 @@ main {
   font-size: 16px;
   color: #333;
   margin: 0;
+  text-align: left;
 }
 
 /* SERVICE SECTION */
@@ -1236,6 +1248,7 @@ main {
   top: 0;
   left: 0;
 }
+
 
 /* CONTACT SECTION */
 .contact-block {
@@ -2682,6 +2695,11 @@ footer {
 
   .about-image img {
     padding-top: 20px;
+
+    width: 70vw;
+    margin: 0 auto;
+    display: flex
+;
   }
 
   .about-text {
@@ -2744,7 +2762,7 @@ footer {
 
   .gift-note p {
     font-size: 14px;
-    text-align: center;
+    text-align: left;
   }
 
   .service-introduce {
@@ -2859,7 +2877,7 @@ footer {
   }
 
   .web-block h3 {
-    font-size: 16px;
+    font-size: 20px;
     text-align: left;
   }
 
@@ -2872,7 +2890,7 @@ footer {
   }
 
   .web-content img {
-    height: 18px;
+    height: 30px;
   }
 
   .web-content p {
@@ -2947,6 +2965,12 @@ footer {
     padding: 0 20px;
   }
 
+  .web-block {
+    margin: 0 auto;
+  }
+  .web-contact {
+    flex-direction: column;
+  }
   /* FOOTER STYLE FOR SMARTPHONE DEVICE */
   .footer-container {
     display: none;
@@ -2997,13 +3021,20 @@ footer {
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin: 20px auto 0;
+    margin: 100px auto 0;
     max-width: 300px;
   }
 
   .footer-mobile-social-icon .ft-social-icon {
     width: 25px;
     height: auto;
+  }
+
+  .copy-right-mobile {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 30px;
   }
 }
 
@@ -3183,6 +3214,10 @@ footer {
     height: auto;
   }
 
+  .about-image img {
+    width: 90vw;
+  }
+
   .about-text h4 {
     font-size: 18px;
     margin-bottom: 15px;
@@ -3191,7 +3226,8 @@ footer {
   .about-text p {
     font-size: 13px;
     line-height: 26px;
-    width: 90%;
+    /* width: 90%; */
+    width: 90vw;
     margin: 0px auto;
     display: flex;
   }
@@ -3214,7 +3250,7 @@ footer {
   }
 
   .ranking-content {
-    max-width: 320px;
+    max-width: 100%;
   }
 
   .ranking-detail h2 {
@@ -3407,7 +3443,7 @@ footer {
   }
 
   .mobile-hamburger-icons {
-    gap: 50px;
+    gap: 20px;
   }
 
   .text-left {
@@ -3466,7 +3502,7 @@ footer {
   }
 
   .about-block .about-text p {
-    width: 65%;
+    width: 70vw;
     text-align: justify;
     display: flex;
     margin: 0px auto;
@@ -3501,8 +3537,12 @@ footer {
   }
 
   .web-content img {
-    height: 20px;
+    height: 30px;
     width: auto;
+  }
+
+  .web-content {
+    margin-left: 40px;
   }
 
   .footer-mobile-main .cart-icon,
