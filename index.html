@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./images/favicon/favicon.ico">
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,12 +61,18 @@
                     </div>
                 </a>
             </div>
+            <nav class="main-menu-sp" style="display: none;">
+                <ul>
+                    <li><i class="bi bi-cart-fill cart-icon"></i><a href="#">オンラインストア</a><i
+                            class="bi bi-box-arrow-up-right link-icon"></i></li>
+                </ul>
+            </nav>
             <!-- Main Menu -->
             <nav class="main-menu">
                 <ul class="nav-menu">
                     <li><i class="bi bi-cart-fill cart-icon"></i><a href="#">オンラインストア</a><i
                             class="bi bi-box-arrow-up-right link-icon"></i></li>
-                    <li><a href="#">北欧の花たちとは</a></li>
+                    <li><a href="./flowers_explain/index.html">北欧の花たちとは</a></li>
                     <li><a href="./service/index.html">花束とサービス</a></li>
                     <li><a href="#">店舗一覧</a><i class="bi bi-envelope-fill mail-icon"></i></li>
                 </ul>
@@ -89,11 +97,11 @@
                         <h1>オンラインストア</h1><i class="bi bi-box-arrow-up-right link-icon"></i>
                     </a>
                 </div>
-                <!-- Column 2: 花とサービス và 北欧の花たちとは -->
+                <!-- Column 2: 花束とサービス và 北欧の花たちとは -->
                 <div class="hamburger-menu__column">
-                    <!-- 花とサービス -->
+                    <!-- 花束とサービス -->
                     <a href="./service/index.html" class="menu-title">
-                        <h1>花とサービス</h1>
+                        <h1>花束とサービス</h1>
                     </a>
                     <div class="menu-section">
                         <a href="./service/index.html#bouquet"><p>北欧の花々を集めたブーケ</p></a>
@@ -101,7 +109,7 @@
                         <a href="./service/index.html#life-style"><p>北欧の花々と育む生活雑貨</p></a>
                     </div>
                     <!-- 北欧の花たちとは -->
-                    <a href="#" class="menu-title">
+                    <a href="./flowers_explain/index.html" class="menu-title">
                         <h1>北欧の花たちとは</h1>
                     </a>
                     <div class="menu-section">
@@ -116,9 +124,15 @@
                         <h1>お取り扱い商品のご案内</h1>
                     </a>
                     <div class="menu-section">
-                        <p>ブログ</p>
-                        <p>コラム イベント</p>
-                        <p>ニュース メールマガジン <span>【購読】</span></p>
+                        <a href="./blog/index.html">
+                            <p>ブログ</p>
+                        </a>
+                        <a href="./event_news/index.html">
+                            <p>コラム イベント</p>
+                        </a>
+                        <a href="./event_news/index.html">
+                            <p>ニュース メールマガジン <span>【購読】</span></p>
+                        </a>
                     </div>
                 </div>
                 <!-- Column 4: 店舗一覧(アクセス) -->
@@ -127,12 +141,12 @@
                         <h1>店舗一覧(アクセス)</h1>
                     </a>
                     <div class="menu-section">
-                        <p>メールマガジン <span>【購読】</span></p>
-                        <p>会社概要</p>
-                        <p>採用情報</p>
-                        <p>サイトマップ</p>
-                        <p>個人情報保護</p>
-                        <p>問い合わせ</p>
+                        <a><p>メールマガジン <span>【購読】</span></p></a>
+                        <a href="./company/index.html"><p>会社概要</p></a>
+                        <a href="./recruit/index.html"><p>採用情報</p></a>
+                        <a><p>サイトマップ</p></a>
+                        <a><p>個人情報保護</p></a>
+                        <a><p>問い合わせ</p></a>
                     </div>
                 </div>
                 <!-- Column 5: Social Media Icons -->
@@ -165,14 +179,14 @@
                 <ul class="mobile-menu-list">
                     <li><i class="bi bi-cart-fill cart-icon"></i><a href="#">オンラインストア</a><i
                             class="bi bi-box-arrow-up-right link-icon"></i></li>
-                    <li class="arrow"><a href="#">花束とサービス</a></li>
-                    <li class="arrow"><a href="#">北欧の花たちとは</a></li>
+                    <li class="arrow"><a href="./service/index.html">花束とサービス</a></li>
+                    <li class="arrow"><a href="./flowers_explain/index.html">北欧の花たちとは</a></li>
                     <li><a href="#">お取り扱い商品のご案内</a></li>
-                    <li><a href="#">ブログ ・ コラム</a></li>
-                    <li><a href="#">イベント ・ ニュース</a></li>
+                    <li><a href="./blog/index.html">ブログ ・ コラム</a></li>
+                    <li><a href="./event_news/index.html">イベント ・ ニュース</a></li>
                     <li><a href="#">店舗情報（アクセス）</a></li>
-                    <li><a href="#">会社概要</a></li>
-                    <li><a href="#">採用情報</a></li>
+                    <li><a href="./company/index.html">会社概要</a></li>
+                    <li><a href="./recruit/index.html">採用情報</a></li>
                     <li class="highlight"><a href="#">メールマガジン <span>【購買】</span></a></li>
                     <li><a href="#">サイトマップ</a></li>
                     <li><a href="#">個人情報保護</a></li>
@@ -266,19 +280,19 @@
                 <div class="event-image">
                     <img src="./images/event-blog.jpg" alt="Blog Image">
                 </div>
-                <div class="event-text">
+                <a href="./blog/index.html" class="event-text">
                     <h2>Blog</h2>
                     <p>HOA展を大阪であちらこちら...</p>
-                </div>
+                </a>
             </div>
             <div class="event-block right-block">
                 <div class="event-image">
                     <img src="./images/event-new.jpg" alt="Event New Image">
                 </div>
-                <div class="event-text">
+                <a href="./event_news/index.html" class="event-text">
                     <h2>Event - New</h2>
                     <p>最新情報や会員インタビュー 募集中</p>
-                </div>
+                </a>
             </div>
         </div>
 
@@ -427,8 +441,8 @@
                             </p>
                         </div>
                         <div class="service-button-detail">
-                            <a href="#"><img src="./images/shopping-icon.png">
-                                <h4>ギフトについてはこちら</h4><img src="./images/row-icon.png">
+                            <a href="#"><img class="button-shop-icon" src="./images/shopping-icon.png">
+                                <h4>ギフトについてはこちら</h4><img class="button-row-icon" src="./images/row-icon.png">
                             </a>
                         </div>
                     </div>
@@ -453,8 +467,8 @@
                             </p>
                         </div>
                         <div class="service-button-detail">
-                            <a href="#"><img src="./images/shopping-icon.png">
-                                <h4>ライフスタイルグッズからみる</h4><img src="./images/row-icon.png">
+                            <a href="#"><img class="button-shop-icon" src="./images/shopping-icon.png">
+                                <h4>ライフスタイルグッズからみる</h4><img class="button-row-icon" src="./images/row-icon.png">
                             </a>
                         </div>
                     </div>
@@ -754,13 +768,17 @@
                         <i class="bi bi-cart-fill cart-icon"></i>
                         <h1>オンラインストア</h1>
                     </a>
+
+                    <a href="#" class="footer-title access">
+                        <img src="./images/access.png"><h1>店舗一覧(アクセス)</h1>
+                    </a> 
                 </div>
-                <!-- Column 2: 花とサービス và 北欧の花たちとは -->
+                <!-- Column 2: 花束とサービス và 北欧の花たちとは -->
                 <div class="footer__column">
                     <div class="footer-column-content">
-                        <!-- 花とサービス -->
-                        <a href="#" class="footer-title">
-                            <h1>花とサービス</h1>
+                        <!-- 花束とサービス -->
+                        <a href="./service/index.html" class="footer-title">
+                            <h1>花束とサービス</h1>
                         </a>
                         <div class="footer-section">
                             <a><img src="./images/row-icon.png">
@@ -774,7 +792,7 @@
                             </a>
                         </div>
                         <!-- 北欧の花たちとは -->
-                        <a href="#" class="footer-title">
+                        <a href="./flowers_explain/index.html" class="footer-title">
                             <h1 class="title-second">北欧の花たちとは</h1>
                         </a>
                         <div class="footer-section">
@@ -796,30 +814,30 @@
                         <h1>お取り扱い商品のご案内</h1>
                     </a>
                     <div class="footer-section">
-                        <a><img src="./images/row-icon.png">
-                            <p>ブログ</p>
+                        <a href="./blog/index.html"><img src="./images/row-icon.png">
+                            <p>ブログ・コラム</p>
+                        </a>
+                        <a href="./event_news/index.html"><img src="./images/row-icon.png">
+                            <p>イベント・ニュース</p>
                         </a>
                         <a><img src="./images/row-icon.png">
-                            <p>コラム イベント</p>
-                        </a>
-                        <a><img src="./images/row-icon.png">
-                            <p>ニュース メールマガジン <span>【購読】</span></p>
+                            <p>メールマガジン <span>【購読】</span></p>
                         </a>
                     </div>
                 </div>
                 <!-- Column 4: 店舗一覧(アクセス) -->
                 <div class="footer__column">
-                    <a href="#" class="footer-title">
+                    <!-- <a href="#" class="footer-title">
                         <h1>店舗一覧(アクセス)</h1>
-                    </a>
+                    </a> -->
                     <div class="footer-section">
-                        <a><img src="./images/row-icon.png">
+                        <!-- <a><img src="./images/row-icon.png">
                             <p>メールマガジン <span>【購読】</span></p>
-                        </a>
-                        <a><img src="./images/row-icon.png">
+                        </a> -->
+                        <a href="./company/index.html"><img src="./images/row-icon.png">
                             <p>会社概要</p>
                         </a>
-                        <a><img src="./images/row-icon.png">
+                        <a href="./recruit/index.html"><img src="./images/row-icon.png">
                             <p>採用情報</p>
                         </a>
                         <a><img src="./images/row-icon.png">
@@ -871,28 +889,28 @@
                 <a href="#"><i class="bi bi-cart-fill cart-icon"></i>
                     <h1>オンラインストア</h1><i class="bi bi-box-arrow-up-right link-icon"></i>
                 </a>
-                <a href="#" class="arrow-2">
-                    <h1>花とサービス</h1>
+                <a href="./service/index.html" class="arrow-2">
+                    <h1>花束とサービス</h1>
                 </a>
-                <a href="#" class="arrow-2">
+                <a href="./flowers_explain/index.html" class="arrow-2">
                     <h1>北欧の花たちとは</h1>
                 </a>
                 <a href="#" class="arrow-2">
                     <h1>お取り扱い商品のご案内</h1>
                 </a>
-                <a href="#" class="arrow-2">
+                <a href="./blog/index.html" class="arrow-2">
                     <h1>ブログ・コラム</h1>
                 </a>
-                <a href="#">
+                <a href="./event_news/index.html">
                     <h1>イベント・ニュース</h1>
                 </a>
                 <a href="#">
                     <h1>店舗情報（アクセス）</h1>
                 </a>
-                <a href="#">
+                <a href="./company/index.html">
                     <h1>会社概要</h1>
                 </a>
-                <a href="#">
+                <a href="./recruit/index.html">
                     <h1>採用情報</h1>
                 </a>
                 <a href="#">

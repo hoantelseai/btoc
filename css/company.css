@@ -1,0 +1,398 @@
+/* COMPANY SECTION */
+/* .company-top-section {
+  width: 100%;
+  overflow: hidden;
+} */
+
+/* .company-top-image img {
+  display: block;
+  width: 100vw;
+  height: auto;
+} */
+
+/* .company-top-breadcrumb {
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 3.49vw;
+  padding-left: 2.865vw;
+} */
+
+/* .company-top-breadcrumb a {
+  font-size: 0.83vw;
+  color: #000;
+  text-decoration: none;
+} */
+
+/* .company-top-breadcrumb a:hover {
+  text-decoration: underline;
+} */
+
+.company-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  color: #333;
+  padding: 3.177vw 15.969vw 9.896vw 15.969vw;
+}
+
+.company-info .company-info-title h1 {
+  text-align: center;
+  font-size: 1.875vw;
+  letter-spacing: 2px;
+}
+
+.company-info-title .en-title {
+  font-family: "Libre Franklin", sans-serif;
+  font-weight: 700;
+  margin-bottom: 1.563vw;
+}
+
+.company-info-title {
+  margin-bottom: 7.187vw;
+}
+
+.company-info table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.company-info th,
+.company-info td {
+  padding: 1.823vw 0vw;
+  border-top: none;
+  border-bottom: 1px solid #ddd;
+  vertical-align: top;
+  font-size: 1.25vw;
+}
+
+.company-info table tr:first-child th,
+.company-info table tr:first-child td {
+  border-top: 1px solid #ddd;
+}
+
+.company-info table tr:last-child th,
+.company-info table tr:last-child td {
+  border-bottom: none;
+}
+
+.company-info th {
+  text-align: left;
+  font-weight: 600;
+  white-space: nowrap;
+  width: 12.5vw;
+}
+
+/* ABOUT US SECTION */
+
+.about-us-company {
+  background-color: #ffd011;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4.844vw 0 7.448vw 0;
+  margin-bottom: 8.177vw;
+}
+
+.about-big-title h1 {
+  font-size: 1.875vw;
+  margin: 0.5vw 0;
+}
+
+.about-big-title .en-title {
+  font-family: "Libre Franklin", sans-serif;
+  font-weight: 700;
+}
+
+.about-us-content {
+  text-align: center;
+  margin-top: 2vw;
+}
+
+.about-us-content p {
+  font-size: 1.25vw;
+  line-height: 2.396vw;
+}
+
+/* COMPANY NEWS SECTION */
+
+.company-new-section {
+  max-width: 1387px;
+  margin: 0px auto;
+  padding: 0px;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.company-block {
+  flex: 1;
+  display: flex;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+.company-block:hover {
+  opacity: 0.7;
+}
+.company-image {
+  width: 40%;
+  height: 100%;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.company-image img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.recruit-text {
+  width: 62%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  color: #fff;
+  font-size: 24px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  text-align: center;
+  padding-left: 40px;
+}
+
+.company-block a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.recruit-text h2 {
+  font-size: 1.6667vw;
+  text-align: justify;
+  margin: 0.521vw 0 0.521vw 0;
+}
+
+.recruit-text p {
+  font-size: 0.9375vw;
+  margin: 0;
+  line-height: 1.5;
+  max-width: 80%;
+}
+
+.left-company .recruit-text {
+  background-color: #53382d;
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 8% 100%);
+}
+
+.right-access .recruit-text {
+  background-color: #4a9507;
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 8% 100%);
+}
+
+/* .company-top-image-sp {
+  display: none;
+} */
+
+.about-us-content-sp {
+    display: none;
+}
+
+@media only screen and (max-width: 1366px) {
+  /* COMPANY SECTION */
+
+  /* .company-top-breadcrumb a {
+    font-size: 1.171vw;
+  } */
+
+  .company-info .company-info-title h1 {
+    font-size: 2.635vw;
+  }
+
+  .company-info-title .en-title {
+    margin-bottom: 1.464vw;
+  }
+  .company-info th,
+  .company-info td {
+    font-size: 1.757vw;
+    padding: 2.562vw 0;
+  }
+
+  .company-info th {
+    width: 17.57vw;
+  }
+
+  /* ABOUT US SECTION */
+
+  .about-big-title h1 {
+    font-size: 2.635vw;
+  }
+
+  .about-us-content p {
+    font-size: 1.757vw;
+    line-height: 3.367vw;
+  }
+
+  /* COMPANY NEWS SECTION */
+
+  .company-new-section {
+    padding: 0vw 5.857vw;
+    gap: 20px;
+  }
+  .company-block {
+    height: 180px;
+  }
+
+  .recruit-text h2 {
+    font-size: 2.34vw;
+  }
+
+  .recruit-text p {
+    font-size: 1.32vw;
+    max-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 820px) {
+  /* COMPANY SECTION */
+  /* .company-top-image img {
+    display: none;
+  } */
+  /* .company-top-image-sp {
+    display: block;
+  } */
+/* 
+  .company-top-breadcrumb {
+    display: none;
+  } */
+
+  /* .company-top-section .company-top-image-sp img {
+    display: block;
+    width: 100vw;
+    height: auto;
+  } */
+
+  .company-info {
+    padding: 10.366vw 2.439vw;
+  }
+
+  .company-info .company-info-title h1 {
+    font-size: 3.9vw;
+  }
+
+  .company-info th, .company-info td {
+    font-size: 2.927vw;
+    padding: 4.268vw 3.659vw;
+  }
+
+  /* ABOUT US SECTION */
+  .about-big-title h1 {
+    font-size: 3.9vw;
+  }
+
+  .about-us-company {
+padding: 8.537vw 0 7.448vw 0;
+  }
+
+  .about-us-content-sp {
+    display: block;
+    padding: 5.805vw 4.268vw 0 4.268vw;
+  }
+
+  .about-us-content-sp p {
+    font-size: 2.927vw;
+    line-height: 7.561vw;
+    text-align: justify;
+  }
+  .about-us-content {
+    display: none;
+  }
+
+  /* COMPANY NEWS SECTION */
+
+  
+  .company-new-section {
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 15px;
+    gap: 15px;
+    max-width: 100%;
+  }
+
+  .company-block {
+    width: 100%;
+    max-width: 500px;
+    height: 150px;
+    margin: 0 auto;
+
+  }
+
+  .recruit-text h2 {
+    font-size: 20px;
+  }
+
+  .recruit-text p {
+    font-size: 14px;
+    max-width: 90%;
+  }
+
+    .recruit-text {
+    padding-left: 7.561vw;
+    width: 71%;
+  }
+
+}
+
+@media only screen and (min-width: 821px) and (max-width: 1024px) and (orientation: landscape) {
+    .company-new-section {
+        padding: 0px 33px;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 820px) {
+    .company-new-section {
+        height: 300px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+  .company-new-section {
+    height: 200px;
+    padding: 0px 5px;
+}
+
+.company-block {
+  /* max-width: 320px; */
+  height: 120px;
+  width: 90.976vw;
+}
+
+.recruit-text h2 {
+  font-size: 16px;
+}
+
+.recruit-text p {
+  font-size: 11px;
+}
+}
+
+/* Styles for devices that support hover (e.g., desktops with mouse) */
+@media (hover: hover) {
+  .company-block:hover {
+    opacity: 0.7;
+  }
+}
+
+/* Styles for devices that do not support hover (e.g., phones, iPads) */
+@media (hover: none) {
+  .company-block {
+    opacity: 1!important;
+  }
+}

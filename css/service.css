@@ -4,77 +4,147 @@
 
 /* TOP SERVICE BLOCK */
 .top-service-block {
-  padding: 30px 40px 88px 40px;
   width: 100%;
-  background-color: #f4f9fd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top-service {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Top-service-wrap */
 .top-service-wrap {
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-  max-width: 1800px;
-  margin: 0 auto;
-  gap: 35px;
-}
-
-.top-service > div:first-child p {
-  font-size: 16px;
-  text-align: left;
-  margin: 0 0 90px 0;
-  font-weight: 300;
-}
-
-/* Top-service-img */
-.top-service-img {
-  flex: 0 0 40%;
-  overflow: hidden;
-}
-
-.top-service-img img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Breadcrumb */
+
+.top-breadcrumb {
+  width: 100%;
+  margin: 0 auto;
+  padding: 2.08vw;
+}
+
+.top-breadcrumb a {
+  font-size: 0.83vw;
+  color: #000;
+  text-decoration: none;
+}
+
+.top-breadcrumb a:hover {
+  opacity: 0.5;
+}
+
+.page-choice a:hover{
+  opacity: 0.5;
+}
+
+/* Top Service Animation*/
+.top-img {
+  width: 100vw;
+  position: relative;
+}
+
+.top-img img {
+  width: 100%;
+  height: auto; 
   display: block;
+  opacity: 0.7; 
+  transition: opacity 0.5s ease;
+}
+
+.top-img img.fade {
+  opacity: 0.5; 
+}
+
+.top-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  text-align: center;
+  font-size: 1.88vw;
+  margin: 0;
+  opacity: 0; 
+  transition: opacity 0.5s ease;
+  z-index: 1;
+}
+
+.top-title.visible {
+  opacity: 1; 
+  width: 100%;
+}
+
+.top-title h1 {
+  margin: 0;
+  opacity: 0; 
+  transform: translateY(-20px); 
+  font-weight: 300; 
+  transition: opacity 3s ease, transform 3s ease; 
 }
 
 /* Top-service-content */
 .top-service-content {
-  flex: 0 0 60%;
-  padding: 20px;
+  width: 100%;
   display: flex;
-  background: #ffffff;
-  flex-direction: column;
   justify-content: center;
+  margin: 0 auto;
+  /* padding: 4.167vw 0vw; */
+  padding: 2vw 0;
+  text-align: center;
 }
 
-.top-service-content h1 {
-  font-size: 36px;
-  margin-bottom: 44px;
-  font-weight: 100;
+.top-title.visible h1:first-child {
+  opacity: 1;
+  transform: translateY(0);
+  font-weight: 700; 
+  transition-delay: 0s;
+}
+
+.top-title.visible h1:last-child {
+  opacity: 1;
+  transform: translateY(0);
+  font-weight: 700; 
+  transition-delay: 0s;
+}
+
+.top-title h1:first-child {
+  font-weight: 700; 
+  font-family: "Libre Franklin", sans-serif;
+  margin-bottom: 1.042vw;
 }
 
 .top-service-content p {
-  font-size: 24px;
+  font-size: 1.25vw;
   line-height: 2;
   letter-spacing: 0.06rem;
+  text-align: center;
+  margin: 0;
 }
 
 /* PRODUCT BLOCK*/
 .product-block {
-  padding: 100px 40px 10px 40px;
+  padding: 5.21vw 2.08vw 0.52vw 2.08vw;
 }
 
 .product-title h2 {
-  font-size: 32px;
+  font-size: 1.67vw;
   text-align: left;
-  margin-bottom: 60px;
+  margin-bottom: 3.13vw;
 }
 
 .product-wrap {
-  margin: 0 auto 80px auto;
-  padding-bottom: 80px;
+  margin: 0 auto 4.1667vw auto;
+  padding-bottom: 4.1667vw;
   position: relative;
 }
 
@@ -93,7 +163,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 60px;
+  gap: 3.13vw;
 }
 
 .product-content-reverse {
@@ -112,22 +182,22 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-bottom: 65px;
+  margin-bottom: 3.39vw;
 }
 
 .product-sub-title h3 {
-  font-size: 28px;
+  font-size: 1.46vw;
   margin: 0;
 }
 
 .product-sub-title h3.thin-title {
   font-weight: 100;
   font-style: italic;
-  margin-bottom: 20px;
+  margin-bottom: 1.0417vw;
 }
 
 .product-detail p {
-  font-size: 18px;
+  font-size: 0.94vw;
   text-align: justify;
   line-height: 2;
   letter-spacing: 0.06rem;
@@ -143,6 +213,7 @@
   object-fit: contain;
 }
 
+/* Button */
 .product-button {
   display: flex;
   flex-direction: row;
@@ -156,8 +227,8 @@
   align-items: center;
   justify-content: center;
   background-color: #9f2a54;
-  height: 102px;
-  width: 490px;
+  height: 5.3125vw;
+  width: 25.5208vw;
   text-decoration: none;
   border-radius: 10px;
 }
@@ -167,14 +238,14 @@
 }
 
 .pink-button h4 {
-  font-size: 26px;
+  font-size: 1.35vw;
   color: #ffffff;
   margin: 0 20px 0 0;
   font-weight: bold;
 }
 
 .pink-button img {
-  width: 20px;
+  width: 1.0417vw;
   height: auto;
   filter: invert(100%);
 }
@@ -185,122 +256,187 @@
   align-items: center;
   justify-content: center;
   background-color: #e0e0e0;
-  height: 102px;
-  width: 500px;
+  height: 5.31vw;
+  width: 26.04vw;
   text-decoration: none;
   border-radius: 5px;
+
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 }
 
-.grey-button a:hover,
-.grey-button-02 a:hover {
-  opacity: 0.7;
+/* Button Hover */
+.grey-button a::after,
+.grey-button-02 a::after {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: -50px;
+  width: 600px;
+  height: 500px;
+  z-index: -1;
+  transform: skewY(-20deg) scale(1, 0);
+  transform-origin: top left;
+  transition: transform 0.6s ease;
+  background-color: #4b4b4b;
+}
+
+.grey-button a:hover::after,
+.grey-button-02 a:hover::after {
+  transform: skewY(-20deg) scale(1, 1);
 }
 
 .grey-button h4,
 .grey-button-02 h4 {
-  font-size: 26px;
+  font-size: 1.35vw;
   color: #000000;
-  margin: 0 20px;
+  margin: 0 1.0417vw;
   font-weight: bold;
+
+  transition: color 0.6s ease;
+}
+
+.grey-button a:hover h4,
+.grey-button-02 a:hover h4 {
+  color: #ffffff;
+}
+
+.grey-button a:hover img,
+.grey-button-02 a:hover img {
+  filter: brightness(0) invert(1);
 }
 
 .grey-button h4 {
-  margin: 0 63px;
+  margin: 0 3.2813vw;
 }
 
 .grey-button img,
 .grey-button-02 img {
-  width: 20px;
+  width: 1.04vw;
   height: auto;
+
+  transition: filter 0.6s ease;
 }
+
 .grey-button-02 .product-shopping-icon {
-  width: 30px;
+  width: 1.56vw;
 }
+
 .grey-button-02 img:first-child {
-  margin-right: 10px;
+  margin-right: 0.5208vw;
 }
 
 .mobile-product-sub-title {
+  display: none;
+}
+.top-img .top-img-sp {
+  display: none;
+}
+
+.top-service-content-sp {
   display: none;
 }
 
 /* CSS FOR SMALL DEVICE */
 /* Media for all screens with a maximum width of 1366px — commonly targeting standard laptops, tablets, and some large smartphones */
 @media only screen and (max-width: 1366px) {
-  .top-service-wrap {
-    gap: 2.5vw;
+  .top-breadcrumb a {
+    font-size: 1.171vw;
   }
-
-  .top-service-img img {
+  .top-img img {
     width: 100%;
   }
 
+  .top-title {
+    font-size: 2.635vw;
+  }
   .top-service-content {
-    padding: 12px 40px;
+    padding: 4.392vw 2.928vw;
   }
 
   .top-service-content p {
-    font-size: 16px;
+    font-size: 1.757vw;
   }
 
   .top-service-content h1 {
-    font-size: 32px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    font-size: 2.635vw;
+    margin-top: 1.46vw;
+    margin-bottom: 1.46vw;
   }
 
   .product-title h2 {
-    font-size: 24px;
+    font-size: 2.343vw;
     margin-bottom: 3vw;
   }
 
   .product-sub-title h3 {
-    font-size: 22px;
+    font-size: 2.05vw;
   }
 
   .product-content {
-    gap: 40px;
+    gap: 2.93vw;
   }
 
   .product-detail p {
-    font-size: 16px;
+    font-size: 1.318vw;
   }
 
   .product-sub-title {
-    margin-bottom: 40px;
+    margin-bottom: 2.93vw;
   }
 
   .pink-button h4 {
-    font-size: 22px;
+    font-size: 1.903vw;
   }
 
   .pink-button a {
-    height: 90px;
-    width: 450px;
+    height: 6.59vw;
+    width: 32.95vw;
   }
 
   .grey-button a {
-    height: 90px;
-    width: 450px;
+    height: 6.59vw;
+    width: 32.95vw;
   }
 
   .grey-button-02 a {
-    height: 90px;
-    width: 500px;
+    height: 6.59vw;
+    width: 34.95vw;
   }
 
   .grey-button h4,
   .grey-button-02 h4 {
-    font-size: 22px;
+    font-size: 1.903vw;
   }
 
   .product-wrap {
-    margin: 0 auto 60px auto;
-    padding-bottom: 60px;
+    margin: 0 auto 4.39vw auto;
+    padding-bottom: 4.39vw;
   }
 }
 
 @media only screen and (max-width: 820px) {
+  .top-img img {
+    display: none;
+  }
+
+  .top-img .top-img-sp {
+    display: block; 
+    width: 100%;
+    height: auto;
+    opacity: 0.7;
+    transition: opacity 0.5s ease;
+  }
+
+  .top-img.top-img-sp.fade {
+    opacity: 0.5;
+  }
+
+  .top-breadcrumb {
+    display: none;
+  }
+
   .logo {
     height: 100%;
   }
@@ -310,54 +446,50 @@
     padding: 0px;
   }
 
-  .top-service > div:first-child p {
-    display: none;
-  }
-
   .top-service-wrap {
     flex-direction: column;
     height: auto;
-    gap: 20px;
   }
 
-  .top-service-img {
-    width: 100%;
-    order: -1;
-  }
-
-  .top-service-img img {
+  .top-img img {
     width: 100%;
     height: auto;
   }
 
-  .top-service-content {
-    width: 100%;
-    padding: 20px;
-    text-align: justify;
-    background: #f4f9fd;
+  .top-title h1 {
+    font-size: 3.9vw;
   }
 
-  .top-service-content h1,
-  .top-service-content p {
+  .top-service-content {
+    display: none;
+  }
+
+  .top-service-content-sp {
+    display: block;
+    padding: 9.024vw 5.976vw;
+  }
+
+  .top-service-content-sp h1,
+  .top-service-content-sp p {
     text-align: center;
   }
 
-  .top-service-content h1 {
-    font-size: 24px;
+  .top-service-content-sp h1 {
+    font-size: 3.9vw;
     margin-bottom: 20px;
     margin-top: 0px;
     font-weight: 500;
   }
 
-  .top-service-content p {
-    font-size: 15px;
-    line-height: 1.6;
+  .top-service-content-sp p {
+    font-size: 3.4vw;
+    line-height: 6.829vw;
     text-align: justify;
   }
 
   /* product-block */
   .product-block {
-    padding: 40px 15px;
+    padding: 0 5.976vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -365,13 +497,15 @@
 
   .product-title h2 {
     text-align: center;
-    font-size: 22px;
+    font-size: 3.9vw;
     margin-bottom: 30px;
+    text-decoration: underline;
+    text-underline-offset: 0.732vw;
   }
 
   .product-wrap {
     margin: 0 auto 40px auto;
-    padding-bottom: 40px;
+    padding-bottom: 0px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -419,12 +553,12 @@
   }
 
   .mobile-product-sub-title h3 {
-    font-size: 18px;
+    font-size: 3.6vw;
   }
 
   .product-detail p {
-    font-size: 14px;
-    line-height: 1.6;
+    font-size: 3.2vw;
+    line-height: 6.829vw;
   }
 
   .product-button {
@@ -439,8 +573,7 @@
   .pink-button a,
   .grey-button-02 a {
     width: 300px;
-    max-width: 400px;
-    height: 70px;
+    height: 60px;
   }
 
   .grey-button a {
@@ -449,7 +582,7 @@
 
   .pink-button h4,
   .grey-button-02 h4 {
-    font-size: 15px;
+    font-size: 4vw;
     margin: 0 10px;
   }
 
@@ -464,13 +597,37 @@
   .grey-button-02 img {
     width: 10px;
   }
+
+  .product-wrap:not(:last-child)::after {
+    display: none;
+  }
+
+  .contact-block {
+    background-color: #fff;
+  }
+
+  .mobile-breadcrumb {
+    background-color: #fff;
+    padding: 2.439vw;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .pink-button h4,
+  .grey-button-02 h4 {
+    font-size: 4vw;
+  }
 }
 
 @media only screen and (min-width: 481px) and (max-width: 820px) {
-  .product-block {
-    display: flex;
-    margin: 0 auto;
-    padding: 40px 60px;
+  .pink-button h4,
+  .grey-button-02 h4 {
+    font-size: 3vw;
+  }
+
+  .pink-button a,
+  .grey-button-02 a {
+    width: 60vw;
   }
 }
 
@@ -500,38 +657,8 @@
 }
 
 @media only screen and (min-width: 821px) and (max-width: 1366px) {
-  .logo img {
-    width: 60px;
-    height: auto;
-  }
-
-  .logo-slogan p:first-child {
-    font-size: 15px;
-    width: 100%;
-  }
-
-  .logo-slogan p {
-    font-size: 11px;
-  }
-
-  .nav-menu {
-    gap: 20px;
-  }
-
-  .hamburger-menu__content {
-    gap: 20px;
-  }
-
   .product-button {
     gap: 50px;
-  }
-
-  .ranking-detail h2 {
-    font-size: 17px;
-  }
-
-  .web-content p {
-    font-size: 22px;
   }
 }
 
@@ -541,23 +668,81 @@
   }
 }
 
-/* Apply hover only on devices that support hover (like laptops or mouse-enabled devices) */
+
+/* Styles for devices that support hover (e.g., desktops with mouse) */
 @media (hover: hover) {
-  .pink-button a:hover {
-    opacity: 0.7;
+  .top-breadcrumb a:hover {
+      opacity: 0.5;
   }
 
-  .grey-button a:hover,
-  .grey-button-02 a:hover {
-    opacity: 0.7;
+  .page-choice a:hover {
+      opacity: 0.5;
+  }
+
+  .pink-button a:hover {
+      opacity: 0.7;
+  }
+
+  .grey-button a:hover::after {
+      transform: skewY(-20deg) scale(1, 1);
+  }
+
+  .grey-button a:hover h4 {
+      color: #ffffff;
+  }
+
+  .grey-button a:hover img {
+      filter: brightness(0) invert(1);
+  }
+
+  .grey-button-02 a:hover::after {
+      transform: skewY(-20deg) scale(1, 1);
+  }
+
+  .grey-button-02 a:hover h4 {
+      color: #ffffff;
+  }
+
+  .grey-button-02 a:hover img {
+      filter: brightness(0) invert(1);
   }
 }
 
-/* Ensure that hover effects are not applied on devices that do not support it (such as phones or touch devices). */
+/* Styles for devices that do not support hover (e.g., phones, iPads) */
 @media (hover: none) {
-  .pink-button a:hover,
-  .grey-button a:hover,
-  .grey-button-02 a:hover {
-    opacity: 1;
+  .top-breadcrumb a:hover {
+      opacity: 1; /* Prevent opacity change */
+  }
+
+  .page-choice a:hover {
+      opacity: 1; /* Prevent opacity change */
+  }
+
+  .pink-button a:hover {
+      opacity: 1; /* Prevent opacity change */
+  }
+
+  .grey-button a:hover::after {
+      transform: skewY(-20deg) scale(1, 0); /* Prevent background transform */
+  }
+
+  .grey-button a:hover h4 {
+      color: #000000; /* Maintain original color */
+  }
+
+  .grey-button a:hover img {
+      filter: none; /* Maintain original filter */
+  }
+
+  .grey-button-02 a:hover::after {
+      transform: skewY(-20deg) scale(1, 0); /* Prevent background transform */
+  }
+
+  .grey-button-02 a:hover h4 {
+      color: #000000; /* Maintain original color */
+  }
+
+  .grey-button-02 a:hover img {
+      filter: none; /* Maintain original filter */
   }
 }

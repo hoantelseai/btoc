@@ -150,3 +150,108 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+// Chọn tất cả các tab và block
+const tabs = document.querySelectorAll('.guide-tab');
+const blocks = document.querySelectorAll('.guide-explain-block');
+
+// Thêm sự kiện click cho từng tab
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        // Xóa class active khỏi tất cả tab và block
+        tabs.forEach(t => t.classList.remove('active'));
+        blocks.forEach(block => block.classList.remove('active'));
+
+
+        tab.classList.add('active');
+
+
+        const target = tab.getAttribute('data-target');
+        const targetBlock = document.querySelector(`.guide-explain-block[data-id="${target}"]`);
+
+
+        if (targetBlock) {
+            targetBlock.classList.add('active');
+        }
+    });
+});
+
+// TOP ANIMATION
+
+document.addEventListener('DOMContentLoaded', () => {
+    const imgPc = document.querySelector('.top-img img');
+    const imgSp = document.querySelector('.top-img-sp');
+    const title = document.querySelector('.top-title');
+    let isFadeApplied = false; // Biến để theo dõi trạng thái fade đã áp dụng hay chưa
+
+    // Xác định ảnh đang hiển thị dựa trên kích thước màn hình
+    function getActiveImage() {
+        if (window.innerWidth <= 820) {
+            return imgSp;
+        }
+        return imgPc;
+    }
+
+    // Sau 0.5 giây, thêm class để hiện tiêu đề và làm nhạt ảnh
+    setTimeout(() => {
+        title.classList.add('visible');
+        const activeImg = getActiveImage();
+        if (activeImg) {
+            activeImg.classList.add('fade');
+            isFadeApplied = true; // Đánh dấu rằng hiệu ứng fade đã được áp dụng
+        }
+    }, 500);
+
+    // Cập nhật khi thay đổi kích thước màn hình
+    window.addEventListener('resize', () => {
+        const activeImg = getActiveImage();
+        const allImages = document.querySelectorAll('.top-img img, .top-img-sp');
+
+        // Nếu hiệu ứng fade đã được áp dụng, đảm bảo ảnh đang hiển thị có class fade
+        if (isFadeApplied) {
+            // Xóa class fade khỏi tất cả ảnh
+            allImages.forEach(img => img.classList.remove('fade'));
+            // Thêm lại class fade cho ảnh hiện tại
+            if (activeImg) {
+                activeImg.classList.add('fade');
+            }
+        }
+    });
+});
+
+
+// document.addEventListener('DOMContentLoaded', () => {
+//     const blocks = document.querySelectorAll('.flower-explain-guide-block');
+
+//     blocks.forEach(block => {
+//         const expandSp = block.querySelector('.explain-block-expand-sp');
+//         const guideDisplay = block.querySelector('.guide-expand-display');
+//         const toggleIcons = block.querySelector('.toggle-icons');
+
+//         if (expandSp && guideDisplay && toggleIcons) {
+//             expandSp.addEventListener('click', () => {
+          
+//                 if (window.innerWidth <= 820) {
+//                     guideDisplay.classList.toggle('active');
+//                     toggleIcons.classList.toggle('active');
+//                 }
+//             });
+//         }
+//     });
+// });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const blocks = document.querySelectorAll('.flower-explain-guide-block');
+
+    blocks.forEach(block => {
+        const expandSp = block.querySelector('.explain-block-expand-sp');
+        const guideDisplay = block.querySelector('.guide-expand-display');
+        const toggleIcons = block.querySelector('.toggle-icons');
+
+        if (expandSp && guideDisplay && toggleIcons) {
+            expandSp.addEventListener('click', () => {
+                guideDisplay.classList.toggle('active');
+                toggleIcons.classList.toggle('active');
+            });
+        }
+    });
+});

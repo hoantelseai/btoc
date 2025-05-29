@@ -1,0 +1,235 @@
+.recruit-top-block {
+  width: 100vw;
+  position: relative;
+  display: block;
+}
+
+.recruit-top-block img {
+  width: 100%;
+  height: auto; 
+  display: block;
+}
+
+.recruit-container {
+  margin: auto;
+  padding: 0 13.542vw;
+  display: flex;
+  flex-direction: column;
+}
+
+/* .container h1 {
+    font-size: 28px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+  } */
+
+.job-section {
+  display: flex;
+  /* padding: 16px 0 0 0; */
+  font-size: 0.938vw;
+  /* height:4.688vw ; */
+}
+
+.label {
+  display: flex;
+  text-align: left;
+  align-items: center;
+  /* height: 4.688vw; */
+  width: 15.625vw;
+  font-weight: bold;
+  color: #2d6023;
+  /* padding-bottom: 16px; */
+  padding: 2.344vw 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  text-align: justify;
+  /* height: 4.688vw; */
+  padding: 2.344vw 0;
+  /* padding-bottom: 16px; */
+  border-bottom: 1px solid #ccc;
+  line-height: 1.6;
+  margin-left: 2.344vw;
+}
+
+.condition-block {
+  /* max-width: 1200px; */
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 3.33vw 13.542vw;
+}
+
+.condition-block h2 {
+  font-size: 1.25vw;
+  margin-bottom: 1.042vw;
+
+  color: #004d00;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.833vw;
+}
+
+.tag {
+  padding: 0.625vw 1.0417vw;
+  border: 2px solid #004d00;
+  color: #004d00;
+  font-weight: bold;
+  white-space: nowrap;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 0;
+  font-size: 1.042vw;
+}
+
+.info-container {
+  /* max-width: 1000px; */
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 0 13.542vw;
+}
+
+.info-row {
+  display: flex;
+  /* padding: 16px 0 0 0; */
+  font-size: 0.938vw;
+  /* height: 4.688vw; */
+}
+
+.info-label {
+  display: flex;
+  align-items: center;
+  width: 15.625vw;
+  /* height: 4.688vw; */
+  color: #2d6023; /* Green */
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+  /* padding-bottom: 16px; */
+  padding: 2.344vw 0;
+}
+
+.info-content {
+  display: flex;
+  align-items: center;
+  /* height: 4.688vw; */
+  flex: 1;
+  border-bottom: 1px solid #ccc;
+  /* padding-bottom: 16px; */
+  padding: 2.344vw 0;
+  margin-left: 2.344vw;
+}
+
+.info-note {
+  margin-top: 20px;
+  font-size: 0.938vw;
+  text-align: right;
+  /* color: #666; */
+}
+
+
+/* CSS FOR SMALL DEVICE */
+/* Media for all screens with a maximum width of 1366px — commonly targeting standard laptops, tablets, and some large smartphones */
+@media only screen and (max-width: 1366px) {
+  .job-section {
+    font-size: 1.318vw;
+    /* height:  8.589vw; */
+  }
+
+  .recruit-container {
+    padding: 0 19.034vw;
+  }
+
+  .label {
+    width: 21.962vw;
+    /* height: 6.589vw; */
+    /* height: 8.589vw; */
+  }
+
+  .content {
+    margin-left: 3.294vw;
+    /* height:  8.589vw; */
+  }
+
+  .condition-block {
+    padding: 4.612vw 19.034vw;
+  }
+  .condition-block h2 {
+    font-size: 1.757vw;
+    margin-bottom: 1.464vw;
+  }
+
+  .tag {
+    padding: 0.8785vw 1.4641vw;
+    font-size: 1.464vw;
+  }
+  .info-container {
+    padding: 0 19.034vw 4.612vw 19.034vw;
+  }
+  .info-content {
+    /* height: 8.589vw; */
+  }
+  .info-label {
+    width: 21.962vw;
+    /* height: 8.589vw; */
+  }
+
+  .info-row {
+    font-size: 1.318vw;
+    /* height: 8.589vw; */
+  }
+
+  .info-note {
+    font-size: 1.2vw;
+  }
+}
+
+@media only screen and (max-width: 820px) {
+  .recruit-container {
+    padding: 0 4.268vw;
+  }
+
+  .job-section {
+    font-size: 3.415vw;
+  }
+
+
+  .condition-block {
+    padding: 4.612vw 4.268vw;
+  }
+
+  .condition-block h2 {
+    font-size: 3.415vw;
+  }
+
+  .tag {
+    font-size: 2.927vw;
+  }
+
+  .tags {
+    gap: 1.951vw;
+  }
+
+  .info-container {
+    padding: 0 4.268vw;
+  }
+
+  .info-row {
+    font-size: 3.415vw;
+  }
+
+
+  .info-note {
+    font-size: 3.415vw;
+    text-align: center;
+  }
+}
