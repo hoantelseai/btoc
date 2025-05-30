@@ -44,7 +44,7 @@
   opacity: 0.5;
 }
 
-.page-choice a:hover{
+.page-choice a:hover {
   opacity: 0.5;
 }
 
@@ -56,40 +56,40 @@
 
 .top-img img {
   width: 100%;
-  height: auto; 
+  height: auto;
   display: block;
-  opacity: 0.7; 
+  opacity: 0.7;
   transition: opacity 0.5s ease;
 }
 
 .top-img img.fade {
-  opacity: 0.5; 
+  opacity: 0.5;
 }
 
 .top-title {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); 
+  transform: translate(-50%, -50%);
   text-align: center;
   font-size: 1.88vw;
   margin: 0;
-  opacity: 0; 
+  opacity: 0;
   transition: opacity 0.5s ease;
   z-index: 1;
 }
 
 .top-title.visible {
-  opacity: 1; 
+  opacity: 1;
   width: 100%;
 }
 
 .top-title h1 {
   margin: 0;
-  opacity: 0; 
-  transform: translateY(-20px); 
-  font-weight: 300; 
-  transition: opacity 3s ease, transform 3s ease; 
+  opacity: 0;
+  transform: translateY(-20px);
+  font-weight: 300;
+  transition: opacity 3s ease, transform 3s ease;
 }
 
 /* Top-service-content */
@@ -106,19 +106,22 @@
 .top-title.visible h1:first-child {
   opacity: 1;
   transform: translateY(0);
-  font-weight: 700; 
+  font-weight: 700;
   transition-delay: 0s;
+  /* font-size: 3vw; */
+  font-size: 2.875vw;
 }
 
 .top-title.visible h1:last-child {
   opacity: 1;
   transform: translateY(0);
-  font-weight: 700; 
+  font-weight: 700;
   transition-delay: 0s;
+  font-size: 2.875vw;
 }
 
 .top-title h1:first-child {
-  font-weight: 700; 
+  font-weight: 700;
   font-family: "Libre Franklin", sans-serif;
   margin-bottom: 1.042vw;
 }
@@ -356,7 +359,8 @@
   }
 
   .top-service-content p {
-    font-size: 1.757vw;
+    /* font-size: 1.757vw; */
+    font-size: 1.32vw;
   }
 
   .top-service-content h1 {
@@ -366,12 +370,12 @@
   }
 
   .product-title h2 {
-    font-size: 2.343vw;
+    /* font-size: 2.343vw; */
     margin-bottom: 3vw;
   }
 
   .product-sub-title h3 {
-    font-size: 2.05vw;
+    /* font-size: 2.05vw; */
   }
 
   .product-content {
@@ -379,7 +383,9 @@
   }
 
   .product-detail p {
-    font-size: 1.318vw;
+    /* font-size: 1.318vw; */
+    font-size: 1.2vw;
+    /* font-size: 1.2vw; */
   }
 
   .product-sub-title {
@@ -387,7 +393,7 @@
   }
 
   .pink-button h4 {
-    font-size: 1.903vw;
+    /* font-size: 1.903vw; */
   }
 
   .pink-button a {
@@ -407,7 +413,7 @@
 
   .grey-button h4,
   .grey-button-02 h4 {
-    font-size: 1.903vw;
+    /* font-size: 1.903vw; */
   }
 
   .product-wrap {
@@ -422,7 +428,7 @@
   }
 
   .top-img .top-img-sp {
-    display: block; 
+    display: block;
     width: 100%;
     height: auto;
     opacity: 0.7;
@@ -610,6 +616,14 @@
     background-color: #fff;
     padding: 2.439vw;
   }
+
+  .top-title.visible h1:first-child {
+    font-size: 4.5vw;
+  }
+
+  .top-title.visible h1:last-child {
+    font-size: 4.5vw;
+  }
 }
 
 @media only screen and (max-width: 480px) {
@@ -668,81 +682,80 @@
   }
 }
 
-
 /* Styles for devices that support hover (e.g., desktops with mouse) */
 @media (hover: hover) {
   .top-breadcrumb a:hover {
-      opacity: 0.5;
+    opacity: 0.5;
   }
 
   .page-choice a:hover {
-      opacity: 0.5;
+    opacity: 0.5;
   }
 
   .pink-button a:hover {
-      opacity: 0.7;
+    opacity: 0.7;
   }
 
   .grey-button a:hover::after {
-      transform: skewY(-20deg) scale(1, 1);
+    transform: skewY(-20deg) scale(1, 1);
   }
 
   .grey-button a:hover h4 {
-      color: #ffffff;
+    color: #ffffff;
   }
 
   .grey-button a:hover img {
-      filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1);
   }
 
   .grey-button-02 a:hover::after {
-      transform: skewY(-20deg) scale(1, 1);
+    transform: skewY(-20deg) scale(1, 1);
   }
 
   .grey-button-02 a:hover h4 {
-      color: #ffffff;
+    color: #ffffff;
   }
 
   .grey-button-02 a:hover img {
-      filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1);
   }
 }
 
 /* Styles for devices that do not support hover (e.g., phones, iPads) */
 @media (hover: none) {
   .top-breadcrumb a:hover {
-      opacity: 1; /* Prevent opacity change */
+    opacity: 1; /* Prevent opacity change */
   }
 
   .page-choice a:hover {
-      opacity: 1; /* Prevent opacity change */
+    opacity: 1; /* Prevent opacity change */
   }
 
   .pink-button a:hover {
-      opacity: 1; /* Prevent opacity change */
+    opacity: 1; /* Prevent opacity change */
   }
 
   .grey-button a:hover::after {
-      transform: skewY(-20deg) scale(1, 0); /* Prevent background transform */
+    transform: skewY(-20deg) scale(1, 0); /* Prevent background transform */
   }
 
   .grey-button a:hover h4 {
-      color: #000000; /* Maintain original color */
+    color: #000000; /* Maintain original color */
   }
 
   .grey-button a:hover img {
-      filter: none; /* Maintain original filter */
+    filter: none; /* Maintain original filter */
   }
 
   .grey-button-02 a:hover::after {
-      transform: skewY(-20deg) scale(1, 0); /* Prevent background transform */
+    transform: skewY(-20deg) scale(1, 0); /* Prevent background transform */
   }
 
   .grey-button-02 a:hover h4 {
-      color: #000000; /* Maintain original color */
+    color: #000000; /* Maintain original color */
   }
 
   .grey-button-02 a:hover img {
-      filter: none; /* Maintain original filter */
+    filter: none; /* Maintain original filter */
   }
 }

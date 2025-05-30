@@ -222,7 +222,7 @@ h6 {
   width: 100%;
   height: 100vh;
   background-color: #fecf11;
-  padding: 90px;
+  padding: 4.688vw 0;
   transform: translateY(-100%);
   transition: transform 0.5s ease;
   z-index: 20;
@@ -360,13 +360,13 @@ body.no-scroll {
 }
 
 .menu-title .cart-icon {
-  font-size: 24px;
+  font-size: 1.56vw;
   color: #aa2537;
   margin-right: 10px;
 }
 
 .menu-title .link-icon {
-  font-size: 15px;
+  font-size: 1.2vw;
   color: #333;
   margin-left: 10px;
 }
@@ -1738,11 +1738,11 @@ footer {
   }
 
   .event-text h2 {
-    font-size: 2.34vw;
+    /* font-size: 2.34vw; */
   }
 
   .event-text p {
-    font-size: 1.32vw;
+    /* font-size: 1.32vw; */
     max-width: 100%;
   }
 
@@ -1751,17 +1751,17 @@ footer {
   }
 
   .about-title {
-    font-size: 2.64vw;
+    /* font-size: 2.64vw; */
     margin-bottom: 40px;
   }
 
   .about-title span {
-    font-size: 2.34vw;
+    /* font-size: 2.34vw; */
     margin-top: 20px;
   }
 
   .about-subtitle {
-    font-size: 2.34vw;
+    /* font-size: 2.34vw; */
     margin-bottom: 20px;
   }
 
@@ -1778,12 +1778,13 @@ footer {
   }
 
   .about-text h4 {
-    font-size: 1.9vw;
+    font-size: 1.5vw;
     margin-bottom: 40px;
   }
 
   .about-text p {
-    font-size: 1.32vw;
+    /* font-size: 1.32vw; */
+    font-size: 1.2vw;
     /* line-height: 32px; */
     line-height: 2.34vw;
   }
@@ -1807,12 +1808,12 @@ footer {
   }
 
   .gift-title h1 {
-    font-size: 2.64vw;
+    /* font-size: 2.64vw; */
     margin-bottom: 15px;
   }
 
   .gift-title h2 {
-    font-size: 2.05vw;
+    /* font-size: 2.05vw; */
   }
 
   .ranking-block {
@@ -1820,7 +1821,7 @@ footer {
   }
 
   .ranking-detail h2 {
-    font-size: 2.05vw;
+    /* font-size: 2.05vw; */
     height: 55px;
   }
 
@@ -1829,7 +1830,7 @@ footer {
   }
 
   .gift-note p {
-    font-size: 1.17vw;
+    /* font-size: 1.17vw; */
   }
 
   .service-introduce {
@@ -1837,19 +1838,19 @@ footer {
   }
 
   .service-introduce h1 {
-    font-size: 2.64vw;
+    /* font-size: 2.64vw; */
     margin-bottom: 15px;
   }
 
   .service-introduce h2 {
-    font-size: 2.05vw;
+    /* font-size: 2.05vw; */
     /* margin-bottom: 60px; */
-    margin-bottom: 4.39vw;
+    margin-bottom: 1vw;
   }
 
   .service-introduce p {
     font-size: 1.32vw;
-    line-height: 1.6;
+    line-height: 2.34vw;
     padding: 20px;
   }
 
@@ -1866,13 +1867,14 @@ footer {
   }
 
   .service-sentence h3 {
-    font-size: 2.05vw;
+    font-size: 1.5vw;
     margin-bottom: 20px;
     line-height: 40px;
   }
 
   .service-sentence p {
-    font-size: 1.32vw;
+    /* font-size: 1.32vw; */
+    font-size: 1.2vw;
     /* line-height: 32px; */
     line-height: 2.34vw;
     margin-bottom: 20px;
@@ -1887,7 +1889,7 @@ footer {
   }
 
   .service-button-detail h4 {
-    font-size: 1.6vw;
+    /* font-size: 1.6vw; */
   }
 
   .social-title {
@@ -1895,12 +1897,12 @@ footer {
   }
 
   .social-title h1 {
-    font-size: 2.64vw;
+    /* font-size: 2.64vw; */
     margin-bottom: 15px;
   }
 
   .social-title h2 {
-    font-size: 2.05vw;
+    /* font-size: 2.05vw; */
   }
 
   .youtube-video {
@@ -1908,7 +1910,7 @@ footer {
   }
 
   .youtube-video h2 {
-    font-size: 2.34vw;
+    /* font-size: 2.34vw; */
     margin-bottom: 50px;
   }
 
@@ -1922,7 +1924,7 @@ footer {
   }
 
   .tiktok-video h2 {
-    font-size: 2.34vw;
+    /* font-size: 2.34vw; */
     margin: 50px 0;
   }
 
@@ -1948,22 +1950,22 @@ footer {
   }
 
   .contact-title h1 {
-    font-size: 2.64vw;
+    /* font-size: 2.64vw; */
     margin-bottom: 15px;
   }
 
   .contact-title h2 {
-    font-size: 2.05vw;
+    /* font-size: 2.05vw; */
     margin-bottom: 80px;
   }
 
   .web-block h3 {
-    font-size: 2.05vw;
+    /* font-size: 2.05vw; */
     margin-bottom: 15px;
   }
 
   .web-content p {
-    font-size: 2.3vw;
+    /* font-size: 2.3vw; */
   }
   .blue-contact img {
     width: 50%;

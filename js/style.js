@@ -87,14 +87,14 @@ document.addEventListener('DOMContentLoaded', () => {
   hamburger.addEventListener('click', () => {
       console.log('Hamburger clicked!'); // Debug
       hamburgerMenu.classList.add('active');
-      document.body.classList.add('no-scroll');
+    //   document.body.classList.add('no-scroll');
   });
 
   // Close the menu when clicking the X
   closeMenu.addEventListener('click', () => {
       console.log('Close menu clicked!'); // Debug
       hamburgerMenu.classList.remove('active');
-      document.body.classList.remove('no-scroll');
+    //   document.body.classList.remove('no-scroll');
   });
 
  

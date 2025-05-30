@@ -204,7 +204,7 @@
 .guide-expand-display p {
   font-size: 1.25vw;
   line-height: 2.396vw;
-  color: #6b4c00;
+  color: #000;
   margin-bottom: 0;
   padding-right: 3.802vw;
 }
@@ -235,7 +235,8 @@
 
 .flower-guide-img img {
   max-width: 100%;
-  height: auto;
+  /* height: auto; */
+  height: 30vw;
   object-fit: contain;
 }
 
@@ -300,12 +301,12 @@
     font-size: 16px;
   }
 
-  .top-explain-content p {
+  /* .top-explain-content p {
     font-size: 1.757vw;
     line-height: 3.807vw;
-  }
+  } */
 
-  .button-to-gift h4 {
+  /* .button-to-gift h4 {
     font-size: 1.903vw;
   }
 
@@ -316,19 +317,19 @@
   .raising-explain p {
     font-size: 1.757vw;
     line-height: 3.367vw;
-  }
+  } */
 
-  .flower-explain-title h2 {
+  /* .flower-explain-title h2 {
     font-size: 2.343vw;
   }
 
   .guide-expand-display p {
     font-size: 1.757vw;
     line-height: 3.367vw;
-  }
+  } */
 
   .flower-guide-img img {
-    width: 40vw;
+    /* width: 40vw; */
   }
 
   .flower-guide-title p {
@@ -336,17 +337,21 @@
   }
 
   .guide-label {
-    font-size: 1.464vw;
-    height: 2.562vw;
-    width: 11.64vw;
+    /* font-size: 1.464vw; */
+    /* height: 2.562vw;
+    width: 11.64vw; */
   }
 
-  .guide-text {
+  /* .guide-text {
     font-size: 1.318vw;
-  }
+  } */
 
   .flower-explain-guide-wrap .flower-explain-guide-block:nth-of-type(2) .flower-guide-title p, .flower-explain-guide-wrap .flower-explain-guide-block:nth-of-type(3) .flower-guide-title p {
     color: #000000;
+  }
+
+  .raising-guide-block {
+    padding: 4.167vw 0;
   }
 }
 
